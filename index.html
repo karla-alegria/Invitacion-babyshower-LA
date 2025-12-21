@@ -57,15 +57,17 @@ body{
   justify-content:center;
 }
 .hero img{
-  width:min(420px,98%);
-  display:block;
-  filter: drop-shadow(0 18px 40px rgba(2,20,40,.18));
+  width: 300px;       /* tamaño controlado */
+  max-width: 85%;     /*responsive en móvil */
+  display: block;
+  margin: 0 auto;
+
+  filter: drop-shadow(0 16px 32px rgba(2,20,40,.18));
 }
 
 /* TEXTO DEBAJO DEL ELEFANTE */
 .subtitle{
-  margin-top: 6px;
-  margin-bottom: 14px;
+  margin: 6px auto 14px auto;
 
   font-family: "Brush Script MT", "Brush Script Std", cursive;
   font-size: 28px;
@@ -73,6 +75,9 @@ body{
 
   letter-spacing: .5px;
   color: rgba(31,41,55,.85);
+
+  text-align: center;
+  display: block;
 }
 
 /* ===== SOBRE ===== */
@@ -178,8 +183,10 @@ body{
   left:50%;
   top:52%;
   transform:translate(-50%,-50%);
-  width:90px;
-  height:90px;
+
+  width:70px;    /* 🔹 tamaño del sello */
+  height:70px;
+
   z-index:10;
   background:none;
   border:none;
@@ -195,7 +202,7 @@ body{
 
 /* ===== PASE PERSONAL ===== */
 .paseWrap{
-  margin-top:18px;
+  margin-top:-4px;
   display:flex;
   justify-content:center;
 }
