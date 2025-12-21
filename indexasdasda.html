@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Baby Shower de Luis Arturo</title>
+  <meta name="description" content="Invitación web - Baby Shower de Luis Arturo. Karla & Arturo. 24 de enero 6:00 pm." />
+
+  <!-- Tipografías (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Paleta moderna (masculina) */
+      --bg0:#070A12;
+      --bg1:#0B1020;
+      --card:#0F1730;
+      --line: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.55);
+      --brand:#4CC9F0;   /* celeste moderno */
+      --brand2:#4361EE;  /* azul */
+      --accent:#B8F2E6;  /* menta suave */
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(67,97,238,.35), transparent 55%),
+        radial-gradient(900px 700px at 100% 10%, rgba(76,201,240,.25), transparent 55%),
+        radial-gradient(800px 600px at 40% 120%, rgba(184,242,230,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      min-height:100vh;
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 22px 16px 44px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom: 14px;
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      font-weight:600;
+      color: var(--muted);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 6px rgba(76,201,240,.10);
+    }
+
+    .controls{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      appearance:none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-weight: 600;
+      cursor:pointer;
+      transition: transform .12s ease, background .2s ease, border-color .2s ease;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.07); }
+    .btn:active{ transform: translateY(0px) scale(.99); }
+
+    .btn.primary{
+      border: none;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 16px 40px rgba(67,97,238,.25);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 14px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+      .controls{ justify-content:flex-start; }
+    }
+
+    .card{
+      border: 1px solid var(--line);
+      background: rgba(15,23,48,.78);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero{
+      padding: 24px 18px 18px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(700px 320px at 20% 0%, rgba(76,201,240,.22), transparent 60%),
+        radial-gradient(700px 320px at 90% 10%, rgba(67,97,238,.18), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+
+    .title{
+      font-family: Fraunces, serif;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.05;
+      margin: 0;
+      letter-spacing: .2px;
+    }
+    .subtitle{
+      margin:0;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing:.2px;
+    }
+
+    .name-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      width: fit-content;
+      color: var(--muted);
+    }
+
+    .highlight{
+      font-weight:800;
+      color: var(--text);
+    }
+
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 8px 0 6px;
+    }
+
+    .info-row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 520px){
+      .info-row{ grid-template-columns: 1fr; }
+    }
+
+    .mini{
+      padding: 14px 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+    }
+    .mini h3{
+      margin:0 0 6px;
+      font-size: 13px;
+      color: var(--muted2);
+      font-weight:700;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+    .mini p{
+      margin:0;
+      font-size: 15px;
+      line-height:1.35;
+      color: var(--text);
+      font-weight:600;
+    }
+
+    .countdown{
+      padding: 18px;
+    }
+    .countdown h2{
+      margin:0 0 12px;
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing:.2px;
+    }
+    .timer{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .tbox{
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+      padding: 14px 10px;
+      text-align:center;
+    }
+    .tbox .num{
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      margin:0;
+    }
+    .tbox .lab{
+      margin:6px 0 0;
+      font-size: 12px;
+      color: var(--muted2);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing:.5px;
+    }
+
+    .actions{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+
+    .footer{
+      margin-top: 16px;
+      color: var(--muted2);
+      font-size: 12px;
+      text-align:center;
+    }
+
+    .spark{
+      position:absolute;
+      right:-40px; top:-40px;
+      width: 150px; height:150px;
+      background: radial-gradient(circle at 30% 30%, rgba(76,201,240,.55), transparent 60%);
+      filter: blur(2px);
+      opacity:.55;
+      pointer-events:none;
+      transform: rotate(20deg);
+    }
+
+    /* Animación suave al cargar */
+    .fade-up{
+      animation: fadeUp .7s ease both;
+    }
+    @keyframes fadeUp{
+      from { opacity:0; transform: translateY(10px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    /* Pequeño aviso de audio */
+    .audio-note{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-top: -4px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar fade-up">
+      <div class="badge" aria-label="Invitación">
+        <span class="dot" aria-hidden="true"></span>
+        Invitación Web · Baby Shower
+      </div>
+
+      <div class="controls">
+        <button id="musicBtn" class="btn" type="button" aria-label="Música">
+          <span aria-hidden="true">🎵</span>
+          <span id="musicLabel">Reproducir</span>
+        </button>
+
+        <a id="rsvpTop" class="btn primary" href="#" target="_blank" rel="noopener">
+          <span aria-hidden="true">✅</span> Confirmar
+        </a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- HERO -->
+      <section class="card hero fade-up" style="animation-delay:.05s">
+        <div class="spark" aria-hidden="true"></div>
+        <div class="hero-inner">
+          <p class="subtitle">¡Acompáñanos a celebrar la llegada de nuestro bebé!</p>
+          <h1 class="title">Baby Shower de<br><span style="background: linear-gradient(135deg,var(--brand),var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent;">Luis Arturo</span></h1>
+
+          <div class="name-chip">
+            <span aria-hidden="true">👨‍👩‍👦</span>
+            <span>Con cariño: <span class="highlight">Karla & Arturo</span></span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="info-row">
+            <div class="mini">
+              <h3>Fecha</h3>
+              <p>Sábado 24 de enero</p>
+            </div>
+            <div class="mini">
+              <h3>Hora</h3>
+              <p>6:00 p. m.</p>
+            </div>
+          </div>
+
+          <div class="mini">
+            <h3>Dirección</h3>
+            <p>Mz. G lote 19, Urb. Los Lirios</p>
+          </div>
+
+          <div class="actions">
+            <a id="mapsBtn" class="btn" href="#" target="_blank" rel="noopener">
+              <span aria-hidden="true">📍</span> Ver ubicación en Google Maps
+            </a>
+
+            <a id="rsvpBtn" class="btn primary" href="#" target="_blank" rel="noopener">
+              <span aria-hidden="true">💬</span> Confirmar asistencia por WhatsApp
+            </a>
+
+            <div class="audio-note">
+              Tip: en celular, la música suele requerir tocar “Reproducir” una vez.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COUNTDOWN -->
+      <aside class="card countdown fade-up" style="animation-delay:.12s">
+        <h2>⏳ Cuenta regresiva</h2>
+
+        <div class="timer" role="timer" aria-live="polite">
+          <div class="tbox">
+            <p class="num" id="d">--</p>
+            <p class="lab">Días</p>
+          </div>
+          <div class="tbox">
+            <p class="num" id="h">--</p>
+            <p class="lab">Horas</p>
+          </div>
+          <div class="tbox">
+            <p class="num" id="m">--</p>
+            <p class="lab">Min</p>
+          </div>
+          <div class="tbox">
+            <p class="num" id="s">--</p>
+            <p class="lab">Seg</p>
+          </div>
+        </div>
+
+        <div class="divider" style="margin:16px 0 14px;"></div>
+
+        <div class="mini">
+          <h3>Dress code</h3>
+          <p>Casual moderno</p>
+        </div>
+
+        <div class="mini" style="margin-top:10px;">
+          <h3>Recomendación</h3>
+          <p>¡Llega puntual para disfrutar juntos! 💙</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer fade-up" style="animation-delay:.18s">
+      Hecho con ♥ para celebrar a Luis Arturo · Invitación web
+    </div>
+  </div>
+
+  <!-- Música (cambia el src por tu mp3) -->
+  <audio id="bgm" preload="auto" loop>
+    <!-- OPCIÓN 1: archivo local -->
+    <!-- <source src="musica.mp3" type="audio/mpeg" /> -->
+
+    <!-- OPCIÓN 2: link directo a MP3 (recomendado usar tu propio hosting) -->
+    <source src="https://cdn.pixabay.com/download/audio/2022/11/10/audio_9b174f39f2.mp3?filename=soft-piano-logo-112194.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    // ====== CONFIGURA AQUÍ ======
+    // 1) Cambia el año si corresponde:
+    // Si tu baby shower es el 24 de enero 2026, deja 2026.
+    // Si es 2027, cambia a 2027, etc.
+    const EVENT_DATE = new Date("2026-01-24T18:00:00-05:00"); // America/Lima (-05:00)
+
+    // 2) WhatsApp: pon el número en formato internacional sin + ni espacios.
+    // Ejemplo Perú: 51987654321
+    const WHATSAPP_NUMBER = "51923810888"; // <-- CAMBIA ESTO
+
+    const BABY_NAME = "Luis Arturo";
+    const PARENTS = "Karla y Arturo";
+    const ADDRESS = "Mz. G lote 19 urb. Los Lirios";
+
+    // ============================
+
+    // Links dinámicos
+    const mapsQuery = encodeURIComponent(ADDRESS);
+    const mapsUrl = `https://maps.app.goo.gl/aDob5pKf1bDz4MSe8`;
+
+    const msg = encodeURIComponent(
+      `Gracias por la invitación, deseo confirmar mi asistencia al Babyshower de ${BABY_NAME}.\n` +
+      `¿Cuántas personas podemos asistir?`
+    );
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+
+    document.getElementById("mapsBtn").href = mapsUrl;
+    document.getElementById("rsvpBtn").href = waUrl;
+    document.getElementById("rsvpTop").href = waUrl;
+
+    // Countdown
+    const elD = document.getElementById("d");
+    const elH = document.getElementById("h");
+    const elM = document.getElementById("m");
+    const elS = document.getElementById("s");
+
+    function pad(n){ return String(n).padStart(2,"0"); }
+
+    function tick(){
+      const now = new Date();
+      let diff = EVENT_DATE - now;
+
+      if(diff <= 0){
+        elD.textContent = "00";
+        elH.textContent = "00";
+        elM.textContent = "00";
+        elS.textContent = "00";
+        return;
+      }
+
+      const sec = Math.floor(diff / 1000);
+      const days = Math.floor(sec / (3600 * 24));
+      const hours = Math.floor((sec % (3600 * 24)) / 3600);
+      const mins = Math.floor((sec % 3600) / 60);
+      const secs = sec % 60;
+
+      elD.textContent = pad(days);
+      elH.textContent = pad(hours);
+      elM.textContent = pad(mins);
+      elS.textContent = pad(secs);
+    }
+
+    tick();
+    setInterval(tick, 1000);
+
+    // Música (play/pause con label)
+    const bgm = document.getElementById("bgm");
+    const btn = document.getElementById("musicBtn");
+    const label = document.getElementById("musicLabel");
+
+    let playing = false;
+
+    btn.addEventListener("click", async () => {
+      try{
+        if(!playing){
+          await bgm.play();
+          playing = true;
+          label.textContent = "Pausar";
+        }else{
+          bgm.pause();
+          playing = false;
+          label.textContent = "Reproducir";
+        }
+      }catch(e){
+        // Si el navegador bloquea reproducción, queda en "Reproducir"
+        playing = false;
+        label.textContent = "Reproducir";
+        alert("Tu navegador bloqueó la música. Intenta nuevamente tocando el botón.");
+      }
+    });
+  </script>
+</body>
+</html>
