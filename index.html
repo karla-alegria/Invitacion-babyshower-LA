@@ -83,10 +83,11 @@ body{
 
 /* ===== SOBRE ===== */
 .envelopeWrap{
-  width:min(440px,98%);
-  margin:10px auto 0;
-  position:relative;
-  overflow: visible
+  width: min(360px, 92%);   /* ✅ más pequeño (antes 440px) */
+  margin: 10px auto 0;
+  position: relative;
+  overflow: visible;
+  padding-bottom: 190px;     /* ✅ espacio para el pase grande */
 }
 
 .envelope{
@@ -179,7 +180,7 @@ body{
 .arcText{
   position:absolute;
   left:50%;
-  top:44%;
+  top:40%;
   transform: translate(-50%,-50%);
   width:220px;
   height:120px;
@@ -188,7 +189,7 @@ body{
 }
 .arcText text{
   font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
+  font-weight: 690;
 
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -237,20 +238,21 @@ body{
 /* ===== PASE PERSONAL ===== */
 .paseWrap{
   position: absolute;
-  /* 🔥 posición tipo TikTok */
-  top: 84%;
   left: 50%;
+  top: 90%;                  /* ✅ más abajo para que sobresalga */
   transform: translate(-50%, -50%);
-  z-index: 20;
+  z-index: 50;
   display: flex;
   justify-content: center;
 }
+
 .paseWrap img{
-  width: 460px;      /* 🔥 tamaño tipo TikTok */
-  max-width: 100%;    /* responsive */
-  
-  filter: drop-shadow(0 22px 40px rgba(0,0,0,.25));
+  width: 440px;              /* ✅ más grande */
+  max-width: 112%;           /* ✅ permite que sea más ancho que el sobre */
+  filter: drop-shadow(0 26px 45px rgba(0,0,0,.28));
 }
+
+  
 </style>
 </head>
 
