@@ -119,19 +119,31 @@ body{
   position:absolute;
   left:0; right:0; top:0;
   height:64%;
-  background: var(--env);
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 60%,
+      rgba(0,0,0,.25) 100%
+    ),
+    var(--env);
+
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   z-index:3;
 }
 .flapLeft{
   position:absolute;
   inset:0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,.18),
-    transparent 70%
-  ),
-  var(--env-edge);
+
+  /* sombra interna real */
+  background:
+    linear-gradient(
+      to right,
+      rgba(0,0,0,.30),
+      rgba(0,0,0,.12) 35%,
+      transparent 70%
+    ),
+    var(--env-edge);
 
   clip-path: polygon(0 0, 50% 50%, 0 100%);
   z-index:2;
@@ -140,12 +152,15 @@ body{
 .flapRight{
   position:absolute;
   inset:0;
-  background: linear-gradient(
-    to left,
-    rgba(0,0,0,.18),
-    transparent 70%
-  ),
-  var(--env-edge);
+
+  background:
+    linear-gradient(
+      to left,
+      rgba(0,0,0,.30),
+      rgba(0,0,0,.12) 35%,
+      transparent 70%
+    ),
+    var(--env-edge);
 
   clip-path: polygon(100% 0, 50% 50%, 100% 100%);
   z-index:2;
@@ -231,8 +246,8 @@ body{
   justify-content: center;
 }
 .paseWrap img{
-  width: 360px;      /* 🔥 tamaño tipo TikTok */
-  max-width: 95%;    /* responsive */
+  width: 400px;      /* 🔥 tamaño tipo TikTok */
+  max-width: 98%;    /* responsive */
   
   filter: drop-shadow(0 22px 40px rgba(0,0,0,.25));
 }
