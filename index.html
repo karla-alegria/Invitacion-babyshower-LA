@@ -85,14 +85,14 @@ body{
   margin:10px auto 0;
   position:relative;
   overflow:visible;
-  padding-bottom:190px;
+  padding-bottom:120px;
 }
 
 .envelopeImg{
   width:100%;
   aspect-ratio:16/10;
   position:relative;
-  background:url("img/sobre.png") center / contain no-repeat;
+  background:url("sobre.png") center / contain no-repeat;
 }
 
 /* TEXTO CURVO */
@@ -139,7 +139,7 @@ body{
 .paseWrap{
   position:absolute;
   left:50%;
-  top:92%;
+  top:80%;                 /* ⬆️ SUBE EL PASE */
   transform:translate(-50%,-50%);
   z-index:50;
 }
@@ -169,9 +169,8 @@ body{
   }
 
   .envelopeWrap{
-    width:min(340px,94%);
-    padding-bottom:160px;
-  }
+  padding-bottom:110px;    /* ⬆️ menos espacio abajo */
+}
 
   .sealBtn{
     top:55%;
@@ -180,7 +179,7 @@ body{
   }
 
   .paseWrap{
-    top:90%;
+    top:80%;
   }
 
   .paseWrap img{
