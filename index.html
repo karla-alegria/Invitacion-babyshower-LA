@@ -202,9 +202,16 @@ body{
 
 /* ===== PASE PERSONAL ===== */
 .paseWrap{
-  margin-top:-4px;
-  display:flex;
-  justify-content:center;
+  position: absolute;
+  /* 🔹 posición: un poco más abajo del centro */
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
 }
 .paseWrap img{
   width:min(440px,98%);
@@ -253,13 +260,16 @@ body{
             <img src="sello.png" alt="Sello luna">
           </button>
 
-        </div>
-      </div>
+        <div class="envelopeWrap">
+  <div class="envelope">
+    <!-- carta -->
+  </div>
 
-      <!-- Pase personal -->
-      <div class="paseWrap">
-        <img src="pase.png" alt="Pase personal">
-      </div>
+  <!-- ✅ pase encima de la carta -->
+  <div class="paseWrap">
+    <img src="img/pase.png" alt="Pase personal">
+  </div>
+</div>
 
     </div>
   </div>
