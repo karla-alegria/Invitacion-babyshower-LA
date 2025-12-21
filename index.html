@@ -1,236 +1,247 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Baby Shower · Portada</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi Baby Shower</title>
 
-  <!-- Fuentes: Poppins para general -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --ink:#1f2937;
-      --line: rgba(31,41,55,.12);
+<style>
+*{box-sizing:border-box;}
 
-      --shadow: 0 18px 60px rgba(2,20,40,.14);
-      --shadow2: 0 10px 30px rgba(2,20,40,.10);
+body{
+  margin:0;
+  font-family:'Poppins',system-ui,sans-serif;
+  background:#f5f9fc;
+}
 
-      --radius-card: 22px;
-    }
+.page1{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+}
 
-    *{ box-sizing:border-box; }
+.frame{
+  width:100%;
+  max-width:520px;
+}
 
-    body{
-      margin:0;
-      font-family:'Poppins', system-ui, sans-serif;
-      background:#f5f9fc; /* neutro afuera */
-    }
+/* ===== TARJETA CENTRAL ===== */
+.card{
+  position:relative;
+  overflow:visible;
+  padding:18px 16px 260px;
+  text-align:center;
 
-    .page1{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:18px 14px;
-    }
+  border-radius:22px;
+  box-shadow:0 18px 60px rgba(2,20,40,.14);
+  background:url("img/fondo.png") center / cover no-repeat;
+}
 
-    .frame{
-      width:100%;
-      max-width:520px;
-    }
+/* Capa blanca suave */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  background:rgba(255,255,255,.55);
+  z-index:0;
+}
 
-    /* ✅ Tarjeta central con fondo SOLO adentro */
-    .card{
-      position:relative;
-      overflow: visible;                 /* ✅ para que no recorte el pase */
-      padding:20px 16px 260px 16px;      /* ✅ espacio extra abajo */
-      text-align:center;
+.card > *{
+  position:relative;
+  z-index:1;
+}
 
-      border:1px solid var(--line);
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow);
+/* ===== ELEFANTE ===== */
+.hero{
+  display:flex;
+  justify-content:center;
+}
 
-      background: url("img/fondo.png") center / cover no-repeat;
-    }
+.hero img{
+  width:300px;
+  max-width:85%;
+  filter:drop-shadow(0 16px 32px rgba(2,20,40,.18));
+}
 
-    /* Opcional: capa blanca suave para legibilidad */
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius: var(--radius-card);
-      background: rgba(255,255,255,.55);
-      z-index:0;
-    }
+/* ===== TEXTO ===== */
+.subtitle{
+  margin:6px auto 14px;
+  text-align:center;
+  font-family:"Brush Script MT","Brush Script Std",cursive;
+  font-size:28px;
+  font-weight:400;
+  letter-spacing:.5px;
+  color:rgba(31,41,55,.85);
+}
 
-    .card > *{
-      position:relative;
-      z-index:1;
-    }
+/* ===== SOBRE ===== */
+.envelopeWrap{
+  width:min(380px,92%);
+  margin:10px auto 0;
+  position:relative;
+  overflow:visible;
+  padding-bottom:190px;
+}
 
-    /* ===== Elefante ===== */
-    .hero{
-      display:flex;
-      justify-content:center;
-      margin-top:4px;
-    }
-    .hero img{
-      width: 300px;        /* ✅ reducido */
-      max-width: 85%;
-      display:block;
-      margin: 0 auto;
-      filter: drop-shadow(0 16px 32px rgba(2,20,40,.18));
-    }
+.envelopeImg{
+  width:100%;
+  aspect-ratio:16/10;
+  position:relative;
+  background:url("img/sobre.png") center / contain no-repeat;
+}
 
-    /* ===== Mi Baby Shower (Brush Script) ===== */
-    .subtitle{
-      margin: 6px auto 14px auto;
-      text-align:center;
-      display:block;
+/* TEXTO CURVO */
+.arcText{
+  position:absolute;
+  left:50%;
+  top:34%;
+  transform:translate(-50%,-50%);
+  width:220px;
+  height:120px;
+  pointer-events:none;
+}
 
-      font-family: "Brush Script MT", "Brush Script Std", cursive;
-      font-size: 28px;
-      font-weight: 400;
-      letter-spacing: .5px;
-      color: rgba(31,41,55,.85);
-    }
+.arcText text{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  fill:#1f2937;
+  font-size:14px;
+}
 
-    /* ===== Sobre como imagen ===== */
-    .envelopeWrap{
-      width: min(380px, 92%);   /* ✅ tamaño del sobre (más pequeño) */
-      margin: 10px auto 0;
-      position: relative;
-      overflow: visible;
-      padding-bottom: 190px;     /* ✅ espacio para que pase sobresalga */
-    }
+/* ===== SELLO ===== */
+.sealBtn{
+  position:absolute;
+  left:50%;
+  top:56%;
+  transform:translate(-50%,-50%);
+  width:70px;
+  height:70px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
 
-    .envelopeImg{
-      width: 100%;
-      aspect-ratio: 16/10;       /* ajusta si tu imagen es distinta */
-      position: relative;
-      overflow: visible;
+.sealBtn img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 5px rgba(0,0,0,.18));
+}
 
-      background: url("img/sobre.png") center / contain no-repeat;
-    }
+/* ===== PASE ===== */
+.paseWrap{
+  position:absolute;
+  left:50%;
+  top:92%;
+  transform:translate(-50%,-50%);
+  z-index:50;
+}
 
-    /* Texto curvo - Georgia */
-    .arcText{
-      position:absolute;
-      left:50%;
-      top:34%;
-      transform: translate(-50%,-50%);
-      width:220px;
-      height:120px;
-      z-index:8;
-      pointer-events:none;
-    }
-    .arcText text{
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      fill: #1f2937;
-      font-size: 14px;
-    }
+.paseWrap img{
+  width:430px;
+  max-width:115%;
+  filter:drop-shadow(0 26px 45px rgba(0,0,0,.28));
+}
 
-    /* Sello - botón activo */
-    .sealBtn{
-      position:absolute;
-      left:50%;
-      top:56%;                    /* ✅ baja/sube el sello aquí */
-      transform: translate(-50%,-50%);
-      width:70px;                 /* ✅ tamaño del sello */
-      height:70px;
-      z-index:10;
-      background:none;
-      border:none;
-      cursor:pointer;
-      padding:0;
-    }
-    .sealBtn img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      filter: drop-shadow(0 2px 5px rgba(0,0,0,.18)); /* sombra suave (no protagonista) */
-    }
+/* 📱 ===== AJUSTES CELULAR ===== */
+@media (max-width:420px){
 
-    /* Pase personal (sobresale tipo TikTok) */
-    .paseWrap{
-      position:absolute;
-      left:50%;
-      top:92%;
-      transform: translate(-50%, -50%);
-      z-index:50;
-      display:flex;
-      justify-content:center;
-    }
-    .paseWrap img{
-      width: 430px;          /* ✅ grande */
-      max-width: 115%;       /* ✅ puede ser más ancho que el sobre */
-      filter: drop-shadow(0 26px 45px rgba(0,0,0,.28));
-    }
+  .card{
+    padding-top:14px;
+    padding-bottom:200px;
+  }
 
-    /* Responsive fino */
-    @media (max-width: 380px){
-      .hero img{ width: 270px; }
-      .subtitle{ font-size: 26px; }
-      .paseWrap img{ width: 380px; max-width: 118%; }
-    }
-  </style>
+  .hero img{
+    width:260px;
+  }
+
+  .subtitle{
+    margin-top:2px;
+    margin-bottom:8px;
+    font-size:25px;
+  }
+
+  .envelopeWrap{
+    width:min(340px,94%);
+    padding-bottom:160px;
+  }
+
+  .sealBtn{
+    top:55%;
+    width:64px;
+    height:64px;
+  }
+
+  .paseWrap{
+    top:90%;
+  }
+
+  .paseWrap img{
+    width:380px;
+    max-width:112%;
+  }
+}
+</style>
 </head>
 
 <body>
-  <section class="page1">
-    <div class="frame">
-      <div class="card">
 
-        <!-- Elefante -->
-        <div class="hero">
-          <img src="img/elefante-nombre.png" alt="Elefantito">
+<section class="page1">
+  <div class="frame">
+    <div class="card">
+
+      <!-- Elefante -->
+      <div class="hero">
+        <img src="img/elefante-nombre.png" alt="Elefantito">
+      </div>
+
+      <!-- Texto -->
+      <div class="subtitle">Mi Baby Shower</div>
+
+      <!-- Sobre + Pase -->
+      <div class="envelopeWrap">
+
+        <div class="envelopeImg">
+
+          <svg class="arcText" viewBox="0 0 220 120">
+            <defs>
+              <path id="arcPath" d="M 28 96 Q 110 20 192 96"/>
+            </defs>
+            <text>
+              <textPath href="#arcPath" startOffset="50%" text-anchor="middle">
+                VER INVITACIÓN
+              </textPath>
+            </text>
+          </svg>
+
+          <button class="sealBtn" onclick="goNext()">
+            <img src="img/sello.png" alt="Sello">
+          </button>
+
         </div>
 
-        <!-- Texto debajo -->
-        <div class="subtitle">Mi Baby Shower</div>
-
-        <!-- Sobre (imagen) + sello + texto curvo + pase sobresaliente -->
-        <div class="envelopeWrap">
-
-          <div class="envelopeImg" aria-label="Sobre">
-            <!-- Texto curvo -->
-            <svg class="arcText" viewBox="0 0 220 120" aria-hidden="true">
-              <defs>
-                <path id="arcPath" d="M 28 96 Q 110 20 192 96"/>
-              </defs>
-              <text>
-                <textPath href="#arcPath" startOffset="50%" text-anchor="middle">
-                  VER INVITACIÓN
-                </textPath>
-              </text>
-            </svg>
-
-            <!-- Botón sello -->
-            <button class="sealBtn" type="button" onclick="goNext()" aria-label="Ver invitación">
-              <img src="img/sello.png" alt="Sello luna">
-            </button>
-          </div>
-
-          <!-- Pase (sobresale) -->
-          <div class="paseWrap">
-            <img src="img/pase.png" alt="Pase personal">
-          </div>
-
+        <div class="paseWrap">
+          <img src="img/pase.png" alt="Pase personal">
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <script>
-    function goNext(){
-      // Hoja 2
-      window.location.href = "invitacion.html";
-    }
-  </script>
+    </div>
+  </div>
+</section>
+
+<script>
+function goNext(){
+  window.location.href="invitacion.html";
+}
+</script>
+
 </body>
 </html>
