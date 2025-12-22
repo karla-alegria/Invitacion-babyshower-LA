@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invitación · Baby Shower</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+
+  body{
+    margin:0;
+    font-family:'Poppins',system-ui,sans-serif;
+    background:#eaf4fb;
+    display:flex;
+    justify-content:center;
+    padding:12px 10px;
+  }
+
+  /* “pantalla” celular/tablet */
+  .phone{
+    width:100%;
+    max-width:390px;
+    border-radius:26px;
+    overflow:hidden;
+    box-shadow:0 18px 60px rgba(2,20,40,.16);
+    background:#fff;
+  }
+
+  /* Fondo solo dentro */
+  .page{
+    min-height:100vh;
+    background: url("img/fondo.png") center / cover no-repeat;
+    position:relative;
+    overflow:hidden;
+  }
+  .page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.62);
+    z-index:0;
+  }
+
+  .content{
+    position:relative;
+    z-index:1;
+    padding:18px 16px 28px;
+  }
+
+  /* botón música */
+  .musicWrap{
+    display:flex;
+    justify-content:center;
+    padding-top:6px;
+    padding-bottom:12px;
+  }
+  .musicBtn{
+    width:64px;
+    height:64px;
+    border-radius:999px;
+    border:1px solid rgba(31,41,55,.12);
+    background: rgba(255,255,255,.7);
+    backdrop-filter: blur(6px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow: 0 10px 26px rgba(2,20,40,.10);
+  }
+  .musicBtn:active{ transform: scale(.98); }
+
+  .musicIcon{
+    width:26px;
+    height:26px;
+    display:block;
+  }
+
+  /* Tipografía y secciones */
+  .title{
+    text-align:center;
+    margin:4px 0 6px;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:.3px;
+    color:#1f2937;
+  }
+
+  .script{
+    text-align:center;
+    margin:0 0 14px;
+    font-family:"Brush Script MT","Brush Script Std",cursive;
+    font-size:32px;
+    font-weight:400;
+    color: rgba(31,41,55,.85);
+  }
+
+  .card{
+    border-radius:18px;
+    background: rgba(255,255,255,.70);
+    border:1px solid rgba(31,41,55,.10);
+    box-shadow: 0 14px 40px rgba(2,20,40,.10);
+    padding:14px;
+    margin:12px 0;
+  }
+
+  .sectionTitle{
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.6px;
+    color:#1f2937;
+    text-transform:uppercase;
+    margin:0 0 10px;
+  }
+
+  .row{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    margin:10px 0;
+  }
+
+  .badge{
+    width:36px;
+    height:36px;
+    border-radius:12px;
+    background: rgba(165,210,245,.55);
+    border:1px solid rgba(31,41,55,.10);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto;
+  }
+
+  .badge svg{ width:18px; height:18px; }
+
+  .rowText{
+    flex:1;
+  }
+  .rowText .label{
+    font-size:12px;
+    color: rgba(31,41,55,.60);
+    margin-bottom:2px;
+  }
+  .rowText .value{
+    font-size:14px;
+    color:#1f2937;
+    font-weight:600;
+    line-height:1.25;
+  }
+
+  /* Imágenes temáticas */
+  .imgBox{
+    width:100%;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid rgba(31,41,55,.10);
+    background: rgba(255,255,255,.7);
+    box-shadow: 0 12px 30px rgba(2,20,40,.08);
+  }
+  .imgBox img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+
+  .hint{
+    font-size:12px;
+    color: rgba(31,41,55,.62);
+    margin-top:8px;
+    text-align:center;
+  }
+
+  /* Botones */
+  .btnRow{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+  }
+  .btn{
+    flex:1;
+    padding:12px 12px;
+    border-radius:14px;
+    border:1px solid rgba(31,41,55,.10);
+    background: rgba(255,255,255,.78);
+    cursor:pointer;
+    font-weight:700;
+    font-size:13px;
+    color:#1f2937;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    box-shadow: 0 12px 28px rgba(2,20,40,.10);
+  }
+  .btnPrimary{
+    background: rgba(165,210,245,.70);
+  }
+  .btn:active{ transform: scale(.99); }
+
+  /* separador suave */
+  .divider{
+    height:1px;
+    background: rgba(31,41,55,.10);
+    margin:16px 0 10px;
+  }
+
+  /* responsivo tablet */
+  @media (min-width: 500px){
+    .phone{ max-width: 520px; }
+  }
+</style>
+</head>
+
+<body>
+  <div class="phone">
+    <main class="page">
+      <div class="content">
+
+        <!-- ✅ botón música centrado -->
+        <div class="musicWrap">
+          <button class="musicBtn" id="musicBtn" type="button" aria-label="Reproducir música">
+            <!-- ícono play/pause (solo imagen/svg) -->
+            <svg class="musicIcon" id="musicIcon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#1f2937" d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Encabezado -->
+        <div class="title">Baby Shower</div>
+        <div class="script">Luis Arturo</div>
+
+        <!-- Imagen temática superior (opcional) -->
+        <div class="imgBox">
+          <!-- Cambia este src por tu imagen temática si quieres -->
+          <img src="img/elefante-nombre.png" alt="Imagen temática">
+        </div>
+        <div class="hint">Desliza hacia abajo para ver los detalles</div>
+
+        <!-- Detalles -->
+        <section class="card">
+          <div class="sectionTitle">Detalles</div>
+
+          <div class="row">
+            <div class="badge" aria-hidden="true">
+              <!-- icono calendario -->
+              <svg viewBox="0 0 24 24">
+                <path fill="#1f2937" d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm13 8H6v10h14V10z"></path>
+              </svg>
+            </div>
+            <div class="rowText">
+              <div class="label">Fecha y hora</div>
+              <div class="value">24 de enero · 6:00 pm</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="badge" aria-hidden="true">
+              <!-- icono ubicación -->
+              <svg viewBox="0 0 24 24">
+                <path fill="#1f2937" d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5c-1.4 0-2.5-1.1-2.5-2.5S10.6 6.5 12 6.5s2.5 1.1 2.5 2.5S13.4 11.5 12 11.5z"></path>
+              </svg>
+            </div>
+            <div class="rowText">
+              <div class="label">Dirección</div>
+              <div class="value">Mz. G lote 19 · Urb. Los Lirios</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="badge" aria-hidden="true">
+              <!-- icono corazón -->
+              <svg viewBox="0 0 24 24">
+                <path fill="#1f2937" d="M12 21s-7.3-4.6-9.7-9C.6 8.8 2.2 6 5.3 6c1.7 0 3 .9 3.7 2 .7-1.1 2-2 3.7-2 3.1 0 4.7 2.8 3 6-2.4 4.4-9.7 9-9.7 9z"></path>
+              </svg>
+            </div>
+            <div class="rowText">
+              <div class="label">Papás</div>
+              <div class="value">Karla y Arturo</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Botones -->
+          <div class="btnRow">
+            <!-- WhatsApp -->
+            <a class="btn btnPrimary"
+               href="https://wa.me/51923810888?text=Hola%20%C2%A1Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo!%20%F0%9F%8E%89"
+               target="_blank" rel="noopener">
+              Confirmar
+            </a>
+
+            <!-- Volver a portada (opcional) -->
+            <a class="btn" href="index.html">
+              Portada
+            </a>
+          </div>
+        </section>
+
+        <!-- Espacio para imágenes (temáticas / foto / etc.) -->
+        <section class="card">
+          <div class="sectionTitle">Recuerdos</div>
+
+          <div class="imgBox">
+            <!-- Cambia por tu imagen temática o foto -->
+            <img src="img/pase.png" alt="Imagen / Pase">
+          </div>
+
+          <div class="hint">Aquí puedes colocar fotos o imágenes temáticas</div>
+        </section>
+
+        <!-- Nota final -->
+        <section class="card">
+          <div class="sectionTitle">Nota</div>
+          <div style="font-size:14px; color:#1f2937; line-height:1.35;">
+            Te esperamos para celebrar la llegada de nuestro bebé 💙<br>
+            ¡Gracias por acompañarnos!
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Audio (cambia la ruta a tu música) -->
+      <audio id="bgMusic" preload="none">
+        <source src="audio/audio.mp3" type="audio/mpeg">
+      </audio>
+    </main>
+  </div>
+
+<script>
+  // Música: play/pause con SOLO icono
+  const musicBtn = document.getElementById("musicBtn");
+  const musicIcon = document.getElementById("musicIcon");
+  const bgMusic = document.getElementById("bgMusic");
+
+  let playing = false;
+
+  function setIcon(isPlaying){
+    // play -> pause
+    if(isPlaying){
+      musicIcon.innerHTML = '<path fill="#1f2937" d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"></path>';
+    }else{
+      musicIcon.innerHTML = '<path fill="#1f2937" d="M8 5v14l11-7z"></path>';
+    }
+  }
+
+  musicBtn.addEventListener("click", async () => {
+    try{
+      if(!playing){
+        await bgMusic.play();
+        playing = true;
+        setIcon(true);
+      }else{
+        bgMusic.pause();
+        playing = false;
+        setIcon(false);
+      }
+    }catch(e){
+      // Si el navegador bloquea autoplay, el click normalmente lo permite.
+      // Si no carga audio, revisa ruta: audio/audio.mp3
+      console.warn("No se pudo reproducir el audio:", e);
+    }
+  });
+
+  // Estado inicial (play)
+  setIcon(false);
+</script>
+</body>
+</html>
