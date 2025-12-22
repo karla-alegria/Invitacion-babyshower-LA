@@ -114,6 +114,130 @@ body{
   padding-bottom:6px;
 }
 
+/* ===== FECHA LIMPIA (centrado real con GRID) ===== */
+.eventDateClean{
+  text-align:center;
+  margin: 18px 0 18px;
+  color:#1f2937;
+}
+
+/* ENERO arriba */
+.monthTop{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:6px;
+}
+
+/* ✅ CENTRADO REAL:
+   - 3 columnas: izquierda (SÁBADO), centro (24), derecha (2026)
+   - el centro SIEMPRE queda perfecto
+*/
+.dateLineGrid{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  column-gap: 12px;
+  max-width: 320px;       /* controla “ancho” del bloque */
+  margin: 0 auto;         /* centra el grid completo */
+}
+
+/* izquierda */
+.dayName{
+  justify-self:end;       /* pega SABADO hacia el centro */
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+/* centro (24) */
+.dayNumber{
+  justify-self:center;
+  font-size:56px;
+  font-weight:900;
+  line-height:1;
+}
+
+/* derecha */
+.yearNumber{
+  justify-self:start;     /* pega 2026 hacia el centro */
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* Hora */
+.dateTime{
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+/* ===== ANIMACIONES ===== */
+
+/* ENERO flotando */
+.floatMonth{
+  animation: floatY 2.6s ease-in-out infinite;
+}
+
+/* 24 “pop” al cargar */
+.popDay{
+  animation: popIn .7s cubic-bezier(.2,1.6,.35,1) 1;
+  transform-origin: center;
+}
+
+/* keyframes */
+@keyframes floatY{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}
+
+@keyframes popIn{
+  0%{ transform: scale(.78); opacity: 0; }
+  60%{ transform: scale(1.08); opacity: 1; }
+  100%{ transform: scale(1); }
+}
+
+/* (Opcional) reduce animación si el usuario lo pide por accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .floatMonth, .popDay{ animation: none; }
+}
+
+ @media (prefers-reduced-motion: reduce){
+  .bounceElephant,
+  .swingElephant,
+  .popElephant{
+    animation: none;
+  }
+}
+
+
+
+  /* Contador */
+  .countdownCard{
+    margin:10px auto 0; max-width:320px;
+    padding:12px 12px 10px; border-radius:14px;
+    background: rgba(255,255,255,.70);
+    border:1px solid rgba(31,41,55,.10);
+    box-shadow:0 14px 40px rgba(2,20,40,.10);
+    text-align:center;
+  }
+  .countTitle{
+    font-size:12px; font-weight:800; letter-spacing:1.2px;
+    color: rgba(31,41,55,.72); text-transform:uppercase; margin-bottom:8px;
+  }
+  .countGrid{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .cBox{
+    border-radius:12px; padding:10px 6px;
+    background: rgba(165,210,245,.45);
+    border:1px solid rgba(31,41,55,.10);
+  }
+  .cNum{ font-size:20px; font-weight:900; letter-spacing:.5px; line-height:1; }
+  .cLab{ margin-top:6px; font-size:10px; font-weight:800; letter-spacing:1px; color: rgba(31,41,55,.70); text-transform:uppercase; }
+  .countNote{ margin-top:8px; font-size:12px; color: rgba(31,41,55,.65); }
+
+  
 /* ======================
    BOX TIKTOK
 ====================== */
@@ -230,6 +354,30 @@ body{
   <div class="parentsNames">Karla & Arturo</div>
 </div>
 
+<div class="eventDateClean">
+  <div class="monthTop floatMonth">ENERO</div>
+
+  <div class="dateLineGrid">
+    <span class="dayName">SÁBADO</span>
+    <span class="dayNumber popDay">24</span>
+    <span class="yearNumber">2026</span>
+  </div>
+
+  <div class="dateTime">6:00 PM</div>
+</div>
+
+            <div class="countdownCard">
+              <div class="countTitle">¿CUÁNTO FALTA?</div>
+              <div class="countGrid" id="countdown">
+                <div class="cBox"><div class="cNum" id="cdDays">00</div><div class="cLab">DÍAS</div></div>
+                <div class="cBox"><div class="cNum" id="cdHours">00</div><div class="cLab">HORAS</div></div>
+                <div class="cBox"><div class="cNum" id="cdMins">00</div><div class="cLab">MIN</div></div>
+                <div class="cBox"><div class="cNum" id="cdSecs">00</div><div class="cLab">SEG</div></div>
+              </div>
+              <div class="countNote" id="cdNote"></div>
+            </div>
+          </div>
+  
 <!-- RECEPCIÓN -->
 <div class="boxElefante">
   <div class="sparkles"></div>
