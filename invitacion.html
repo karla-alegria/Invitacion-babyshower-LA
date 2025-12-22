@@ -579,6 +579,7 @@ html,body{ height:100%; }
   font-weight: 900;
   color: #6B4A2B;
   line-height: 1.1;
+  align-items:center;
 }
 
 .confirmThanks span{
@@ -645,6 +646,12 @@ html,body{ height:100%; }
   .confirmImgWrap{ width: 140px; height: 140px; }
 }
 
+.confirmWrapper{
+  position:relative;
+  max-width:420px;
+  margin:50px auto 30px;
+  padding-left:90px; /* espacio para el elefante */
+}
 
   
   /* Tarjetas utilitarias */
@@ -759,27 +766,26 @@ html,body{ height:100%; }
 </div>
 
 <!-- CONFIRMACIÓN -->
-<section class="confirmBox">
-    <div class="confirmContent">
-        <div class="confirmHeader">
-      <img src="img/confirmación.png" alt="Elefante" class="confirmElephant">
+<section class="confirmWrapper">
 
-      <div class="confirmText">
-        <h3 class="confirmTitle">Confirmación</h3>
-        <p class="confirmDesc">
-          Nos encantaría saber que nos acompañas.
-        </p>
+  <!-- Elefante FUERA del box -->
+  <img src="img/elefante.png" alt="Elefante" class="confirmElephant">
 
-        <a class="confirmBtn"
-           href="https://wa.me/51923810888?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo%20🤩🤩"
-           target="_blank">
-           
-          <img src="img/whatsapp.png" class="waIcon">
-          Confirmar asistencia
-        </a>
-      </div>
-    </div>
+  <!-- Box transparente -->
+  <div class="confirmBox">
+    <h3 class="confirmTitle">Confirmación</h3>
 
+    <p class="confirmDesc">
+      Nos encantaría saber que nos acompañas.
+    </p>
+
+    <a class="confirmBtn"
+       href="https://wa.me/51923810888?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo%20🤩🤩"
+       target="_blank">
+
+      <img src="img/whatsapp.png" class="waIcon">
+      Confirmar asistencia
+    </a>
   </div>
 
 </section>
