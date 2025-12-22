@@ -237,9 +237,6 @@ html,body{ height:100%; }
   .cLab{ margin-top:6px; font-size:10px; font-weight:800; letter-spacing:1px; color: rgba(31,41,55,.70); text-transform:uppercase; }
   .countNote{ margin-top:8px; font-size:12px; color: rgba(31,41,55,.65); }
 
-
-
-
   
 /* ======================
    BOX TIKTOK
@@ -446,6 +443,42 @@ btn.onclick=async()=>{
   else{ audio.pause(); icon.innerHTML='<path fill="#1f2937" d="M8 5v14l11-7z"/>'; }
   play=!play;
 };
+
+  /* Contador – 24/01/2026 6:00 PM (Perú -05:00) */
+  const EVENT_DATE = new Date("2026-01-24T18:00:00-05:00");
+
+  const elDays  = document.getElementById("cdDays");
+  const elHours = document.getElementById("cdHours");
+  const elMins  = document.getElementById("cdMins");
+  const elSecs  = document.getElementById("cdSecs");
+  const elNote  = document.getElementById("cdNote");
+
+  const pad2 = n => String(n).padStart(2,"0");
+
+  function tick(){
+    const now = new Date();
+    const diff = EVENT_DATE - now;
+
+    if(diff <= 0){
+      elDays.textContent = elHours.textContent = elMins.textContent = elSecs.textContent = "00";
+      elNote.textContent = "¡Hoy es el gran día! 💙";
+      return;
+    }
+    const totalSeconds = Math.floor(diff/1000);
+    const d = Math.floor(totalSeconds / (3600*24));
+    const h = Math.floor((totalSeconds % (3600*24)) / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+
+    elDays.textContent  = pad2(d);
+    elHours.textContent = pad2(h);
+    elMins.textContent  = pad2(m);
+    elSecs.textContent  = pad2(s);
+    elNote.textContent  = "";
+  }
+  tick();
+  setInterval(tick,1000);
+  
 </script>
 
 </body>
