@@ -510,23 +510,28 @@ html,body{ height:100%; }
 }
 
 .confirmBtn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 16px;
-  border-radius: 16px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 13px;
+  display:flex;
+  align-items:center;
+  gap:10px;
 
-  /* botón “soft” sin caja grande */
-  background: rgba(165,210,245,.55);
-  border: 1px solid rgba(31,41,55,.10);
-  color: #6B4A2B;
-  box-shadow: 0 12px 26px rgba(2,20,40,.10);
+  padding:12px 18px;
+  border-radius:18px;
+  text-decoration:none;
+
+  background: rgba(165,210,245,.6);
+  border:1px solid rgba(31,41,55,.12);
+  color:#6B4A2B;
+
+  font-weight:800;
+  font-size:13px;
+
+  box-shadow:0 14px 30px rgba(2,20,40,.15);
 }
 
-.confirmBtn:active{ transform: scale(.99); }
+.confirmBtn:active{
+  transform:scale(.98);
+}
+
 
 .confirmBox{
   max-width:360px;
@@ -550,6 +555,24 @@ html,body{ height:100%; }
     inset 0 1px 0 rgba(255,255,255,.7);
 }
 
+  /* ícono Whatsapp */
+  .waIcon{
+  width:22px;
+  height:22px;
+  display:block;
+}
+
+  @media (max-width:420px){
+  .confirmHeader{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .confirmText{
+    text-align:center;
+  }
+}
+
   
 .confirmThanks{
   margin-top: 14px;
@@ -565,40 +588,37 @@ html,body{ height:100%; }
   font-size: 12px;
   color: rgba(31,41,55,.65);
 }
-.confirmHeader{
+
+  .confirmHeader{
   display:flex;
   align-items:center;
-  justify-content:center;
   gap:14px;
-  margin: 6px 0 10px;
 }
 
 .confirmElephant{
-  width:110px;     /* ajusta tamaño */
+  width:110px;
   height:auto;
-  display:block;
   object-fit:contain;
-  flex:0 0 auto;
 }
 
-.confirmHeadText{
+.confirmText{
   text-align:left;
-  max-width:220px;
 }
 
 .confirmTitle{
   font-size:20px;
   font-weight:900;
-  color:#6B4A2B;
   margin:0 0 6px;
+  color:#6B4A2B;
 }
 
 .confirmDesc{
   font-size:13px;
   line-height:1.35;
-  color:rgba(31,41,55,.70);
-  margin:0;
+  margin:0 0 12px;
+  color:rgba(31,41,55,.7);
 }
+
 
 /* En pantallas muy angostas, que se apile bonito */
 @media (max-width:380px){
