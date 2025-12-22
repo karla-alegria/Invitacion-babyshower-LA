@@ -49,16 +49,6 @@
     z-index:0; pointer-events:none;
   }
  .direccionBox{
-  background: #e6b97a;   /* tono beige */
-  padding: 24px;
-  border-radius: 28px;
-  text-align: center;
-  max-width: 360px;
-  margin: 0 auto;
-  font-family: 'Patrick Hand', cursive;
-}
-
-.direccionBox{
   position: relative;
   padding: 28px 22px;
   border-radius: 34px;
@@ -68,14 +58,15 @@
   font-family: 'Patrick Hand', cursive;
   color: #6B4A2B;
 
-  /* 🎨 Fondo elegante estilo elefante */
+  /* 🐘 Fondo celeste elegante */
   background:
-    radial-gradient(circle at top left, #FFF6E8 0%, transparent 45%),
-    radial-gradient(circle at bottom right, #BFDDE6 0%, transparent 40%),
-    linear-gradient(180deg, #E8C27A 0%, #E5B96D 100%);
+    radial-gradient(circle at top left, #FFFFFF 0%, transparent 45%),
+    radial-gradient(circle at bottom right, #9CCAD9 0%, transparent 45%),
+    linear-gradient(180deg, #EAF6FA 0%, #BFDDE6 100%);
 
   box-shadow: 0 14px 35px rgba(0,0,0,.18);
 }
+
 
  .tituloUbicacion{
   margin: 0 0 12px;
@@ -85,6 +76,7 @@
   justify-content: center;
   gap: 6px;
 }
+
  .btnMapa{
   display: inline-block;
   padding: 10px 22px;
@@ -112,10 +104,13 @@
 .mapBox{
   width: 100%;
   height: 160px;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  border: 4px solid #9CCAD9;   /* azul suave */
+  background: #FFFFFF;
 }
+
 
 .mapBox iframe{
   width: 100%;
@@ -125,14 +120,22 @@
 
 .btnMapa{
   display: inline-block;
-  padding: 8px 18px;
-  background: #f5d7a5;
-  color: #5a3b1d;
-  border-radius: 10px;
+  padding: 10px 22px;
+  background: #BFDDE6;
+  color: #6B4A2B;
+  border-radius: 16px;
   text-decoration: none;
   font-size: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+  box-shadow:
+    inset 0 -3px 0 rgba(0,0,0,.12),
+    0 6px 14px rgba(0,0,0,.15);
+  transition: transform .2s ease;
 }
+
+.btnMapa:hover{
+  transform: scale(1.05);
+}
+
  
 .confirmacionBox{
   max-width: 360px;
