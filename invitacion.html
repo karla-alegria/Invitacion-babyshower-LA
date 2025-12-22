@@ -58,10 +58,50 @@
   font-family: 'Patrick Hand', cursive;
 }
 
-.direccionBox h3{
-  margin: 0 0 10px;
-  font-size: 22px;
+.direccionBox{
+  position: relative;
+  padding: 28px 22px;
+  border-radius: 34px;
+  text-align: center;
+  max-width: 360px;
+  margin: 30px auto;
+  font-family: 'Patrick Hand', cursive;
+  color: #6B4A2B;
+
+  /* 🎨 Fondo elegante estilo elefante */
+  background:
+    radial-gradient(circle at top left, #FFF6E8 0%, transparent 45%),
+    radial-gradient(circle at bottom right, #BFDDE6 0%, transparent 40%),
+    linear-gradient(180deg, #E8C27A 0%, #E5B96D 100%);
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.18);
 }
+
+ .tituloUbicacion{
+  margin: 0 0 12px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+ .btnMapa{
+  display: inline-block;
+  padding: 10px 22px;
+  background: #BFDDE6;
+  color: #6B4A2B;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.1),
+              0 6px 14px rgba(0,0,0,.15);
+  transition: transform .2s ease;
+}
+
+.btnMapa:hover{
+  transform: scale(1.05);
+}
+
 
 .direccionTexto{
   font-size: 16px;
@@ -368,10 +408,12 @@
           </div>
 
          <div class="direccionBox">
-  <h3>Recepción</h3>
+  <h3 class="tituloUbicacion">
+  📍 Recepción
+</h3>
 
   <p class="direccionTexto">
-    “Mz. G lote !9”<br>
+    Mz. G lote 19<br>
     Urb. Los Lirios<br>
     Lima, SMP
   </p>
@@ -391,11 +433,6 @@
 </div>
 
 
-          <!-- Más contenido opcional -->
-          <section class="card">
-            <div class="sectionTitle">Detalles</div>
-            <div style="font-size:14px;color:#1f2937;line-height:1.35;">
-              <strong>Dirección:</strong> Mz. G lote 19 · Urb. Los Lirios<br>
               <strong>WhatsApp:</strong> <a href="https://wa.me/51923810888" target="_blank" rel="noopener">+51 923 810 888</a>
             </div>
 
