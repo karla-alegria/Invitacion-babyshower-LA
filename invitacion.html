@@ -62,7 +62,7 @@
  .heroTitle{
   text-align:center;
   font-family:"Brush Script MT","Brush Script Std",cursive;
-  font-size:38px;
+  font-size:36px;
   font-weight:700;                 /* simula negrita */
   color:#1a2533;
   letter-spacing:.5px;
@@ -159,12 +159,14 @@
   .rowText .value{ font-size:14px; color:#1f2937; font-weight:600; line-height:1.25; }
 
   .imgBox{
-    width:100%;
-    border-radius:16px;
-    overflow:hidden;
-    background: none;
-    box-shadow: 0 12px 30px rgba(2,20,40,.08);
-  }
+  width: 60%;      /* prueba 80%, 70%, 60% */
+  max-width: 300px; /* tamaño máximo */
+  margin: 0 auto;  /* centrar */
+  border-radius: 16px;
+  overflow: hidden;
+  background: none;
+  box-shadow: 0 12px 30px rgba(2,20,40,.08);
+}
   .imgBox img{ display:block; width:100%; height:auto; }
 
   .hint{ font-size:12px; color: rgba(31,41,55,.62); margin-top:8px; text-align:center; }
