@@ -22,21 +22,23 @@
 
   /* “pantalla” celular/tablet */
   .phone{
-    width:100%;
-    max-width:390px;
-    border-radius:26px;
-    overflow:hidden;
-    box-shadow:0 18px 60px rgba(2,20,40,.16);
-    background:#fff;
-  }
+  width:100%;
+  max-width:390px;
+  border-radius:26px;
+  overflow:hidden;              /* se mantiene para bordes redondeados */
+  box-shadow:0 18px 60px rgba(2,20,40,.16);
+  background:#fff;
+  height: calc(100vh - 24px);   /* ✅ alto visible */
+}
 
   /* Fondo solo dentro */
   .page{
-    min-height:100vh;
-    background: url("img/fondo.png") center / cover no-repeat;
-    position:relative;
-    overflow:hidden;
-  }
+  height: 100%;
+  overflow-y: auto;             /* ✅ permite deslizar */
+  -webkit-overflow-scrolling: touch; /* ✅ scroll suave iPhone */
+  background: url("img/fondo.png") center / cover no-repeat;
+  position:relative;
+}
   .page::before{
     content:"";
     position:absolute;
