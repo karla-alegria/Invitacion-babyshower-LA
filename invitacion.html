@@ -28,7 +28,7 @@ html,body{ height:100%; }
   width:100%;
   position: relative;
   max-width:460px;
-  border-radius:22px;
+  /*border-radius:22px;*/
   overflow:hidden;
   box-shadow:0 18px 60px rgba(2,20,40,.16);
   background:#fff;
@@ -39,8 +39,13 @@ html,body{ height:100%; }
   position:relative;
 }
 .page::before{
-  display:none
-}
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(255,255,255,.55);
+      z-index:0;
+      pointer-events:none;
+    }
 
 .content{
   position:relative;
