@@ -197,6 +197,11 @@ body{
         <img src="img/elefante-nombre.png" alt="Elefantito">
       </div>
 
+<audio id="bgMusic" preload="auto" loop>
+  <source src="img/musica.mp3" type="audio/mpeg">
+</audio>
+
+
       <!-- Texto -->
       <div class="subtitle">Mi Baby Shower</div>
 
@@ -238,6 +243,7 @@ body{
     const sealBtn = document.getElementById("sealBtn");
     const envelopeImg = document.getElementById("envelopeImg");
     const card = document.getElementById("card");
+    const music = document.getElementById("bgMusic");
 
     if(!sealBtn || !envelopeImg || !card){
       window.location.href = nextUrl;
@@ -246,6 +252,16 @@ body{
 
     if(sealBtn.dataset.busy === "1") return;
     sealBtn.dataset.busy = "1";
+
+    // ✅ Intentar reproducir música (esto SÍ lo permite el navegador porque viene del click)
+    if (music) {
+      // Guardamos una bandera para intentar continuar en la hoja 2
+      try { sessionStorage.setItem("playMusicOnNextPage", "1"); } catch(e){}
+
+      music.play().catch(() => {
+        // Si el navegador lo bloquea igual, no rompemos nada
+      });
+    }
 
     sealBtn.classList.add("is-pressed");
     envelopeImg.classList.add("is-opening");
@@ -259,5 +275,6 @@ body{
     if(sealBtn) sealBtn.addEventListener("click", goNext);
   });
 </script>
+
 </body>
 </html>
