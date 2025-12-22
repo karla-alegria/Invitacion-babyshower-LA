@@ -127,7 +127,6 @@
   border-bottom: 2px solid rgba(31,41,55,0.25);
 }
 
-  /* ===== FECHA ESTILO TIKTOK ===== */
 /* ===== FECHA LIMPIA ESTILO TIKTOK ===== */
 .eventDateClean{
   text-align: center;
@@ -145,10 +144,10 @@
 
 /* Línea SABADO 24 2026 */
 .dateLine{
-  display: flex;
-  justify-content: center;
+  display: inline-flex;          /* 👈 clave */
   align-items: baseline;
   gap: 10px;
+  transform: translateX(-6px);   /* 👈 ajuste óptico */
 }
 
 .dayName{
@@ -168,6 +167,7 @@
   font-weight: 700;
   letter-spacing: 1px;
   margin-top: 6px;
+  margin-left: 2px;
 }
 
 /* Hora */
