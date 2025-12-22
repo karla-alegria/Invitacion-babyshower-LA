@@ -79,7 +79,7 @@ body{
 /* ===== Sobre (más pequeño) ===== */
 .envelopeWrap{
   width:100%;
-  max-width:320px;                /* ✅ carta más pequeña */
+  max-width:300px;                /* ✅ carta más pequeña */
   margin:8px auto 0;
   position:relative;
   overflow:visible;
@@ -137,15 +137,19 @@ body{
 /* ✅ Pase (más grande y sobresale) */
 .paseWrap{
   position:absolute;
+  top:60%;
   left:50%;
-  top:60%;                         /* ⬆️ más arriba, centrado en el sobre */
-  transform:translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* centrado matemático */
   z-index:60;
-  pointer-events:none;
+
+  width: 520px;           /* mismo ancho que el pase */
+  max-width: 160vw;       /* permite crecer en móvil */
+  display:flex;
+  justify-content:center; /* centra el PNG dentro */
 }
 
 .paseWrap img{
-  width:520px;                     /* 🔥 MÁS GRANDE */
+  width:540px;                     /* 🔥 MÁS GRANDE */
   max-width:160%;                  /* 🔥 sobresale del sobre */
   height:auto;
   filter:drop-shadow(0 24px 45px rgba(0,0,0,.28));
