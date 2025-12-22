@@ -257,6 +257,16 @@ html,body{ height:100%; }
   .cLab{ margin-top:6px; font-size:10px; font-weight:800; letter-spacing:1px; color: rgba(31,41,55,.70); text-transform:uppercase; }
   .countNote{ margin-top:8px; font-size:12px; color: rgba(31,41,55,.65); }
 
+
+.pinIcon{
+  display:block;
+  width:34px;          /* tamaño del icono */
+  height:auto;
+  margin:0 auto 8px;   /* centrado + espacio abajo */
+  opacity:.9;
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,.18));
+}
+
   
 /* ======================
    BOX TIKTOK
@@ -479,11 +489,13 @@ html,body{ height:100%; }
 <!-- RECEPCIÓN -->
 <div class="boxElefante">
   <div class="sparkles"></div>
-  <h3 class="tituloUbicacion">📍 Recepción</h3>
+  <img src="img/pin.png" alt="Ubicación" class="pinIcon">
+  <h3 class="tituloUbicacion">Recepción</h3>
   <p>Mz. G lote 19<br>Urb. Los Lirios<br>Lima, SMP</p>
   <div class="mapBox">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.59863883633!2d-77.0934195!3d-12.002249999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf001f409cd3%3A0xb85be9330ee12223!2sCASA%20ALEGRIA!5e0!3m2!1ses!2spe!4v1766382857222!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
+  
   
 </div>
 
