@@ -449,7 +449,7 @@ html,body{ height:100%; }
 
 </div>
 
-<audio id="bgMusic" preload="none">
+<audio id="bgMusic" preload="auto" loop>
   <source src="audio/audio.mp3" type="audio/mpeg">
 </audio>
 
@@ -458,27 +458,65 @@ html,body{ height:100%; }
 </div>
 
 <script>
+const btn = document.getElementById("musicBtn");
+const icon = document.getElementById("musicIcon");
+const audio = document.getElementById("bgMusic");
+let play = false;
 
-  //audio página 1
-  document.addEventListener("DOMContentLoaded", () => {
-  const shouldPlay = sessionStorage.getItem("playMusicOnNextPage") === "1";
-  const music = document.getElementById("bgMusic");
-
-  if (shouldPlay && music) {
-    sessionStorage.removeItem("playMusicOnNextPage");
-    music.play().catch(() => {});
+function setIcon(isPlaying){
+  if(isPlaying){
+    icon.innerHTML = '<path fill="#1f2937" d="M6 5h4v14H6zm8 0h4v14h-4z"/>';
+  }else{
+    icon.innerHTML = '<path fill="#1f2937" d="M8 5v14l11-7z"/>';
   }
-});
-const btn=document.getElementById("musicBtn");
-const icon=document.getElementById("musicIcon");
-const audio=document.getElementById("bgMusic");
-let play=false;
+}
 
-btn.onclick=async()=>{
-  if(!play){ await audio.play(); icon.innerHTML='<path fill="#1f2937" d="M6 5h4v14H6zm8 0h4v14h-4z"/>'; }
-  else{ audio.pause(); icon.innerHTML='<path fill="#1f2937" d="M8 5v14l11-7z"/>'; }
-  play=!play;
+async function tryAutoPlayFromEnvelope(){
+  // ✅ Si vienes del sobre (hoja 1), en hoja 1 dejamos una bandera:
+  // sessionStorage.setItem("playMusicOnNextPage","1")
+  let shouldPlay = false;
+  try{
+    shouldPlay = sessionStorage.getItem("playMusicOnNextPage") === "1";
+  }catch(e){}
+
+  if(!shouldPlay) return;
+
+  try{ sessionStorage.removeItem("playMusicOnNextPage"); }catch(e){}
+
+  try{
+    await audio.play();
+    play = true;
+    setIcon(true);
+  }catch(err){
+    // Si el navegador lo bloquea, no pasa nada:
+    // el usuario podrá darle play manual con el botón.
+    play = false;
+    setIcon(false);
+  }
+}
+
+btn.onclick = async () => {
+  if(!play){
+    try{
+      await audio.play();
+      play = true;
+      setIcon(true);
+    }catch(e){
+      // si falla, dejamos el icono en play
+      play = false;
+      setIcon(false);
+    }
+  }else{
+    audio.pause();
+    play = false;
+    setIcon(false);
+  }
 };
+
+// ✅ intenta auto-play al cargar la hoja 2
+document.addEventListener("DOMContentLoaded", () => {
+  tryAutoPlayFromEnvelope();
+});
 
   /* Contador – 24/01/2026 6:00 PM (Perú -05:00) */
   const EVENT_DATE = new Date("2026-01-24T18:00:00-05:00");
@@ -514,8 +552,8 @@ btn.onclick=async()=>{
   }
   tick();
   setInterval(tick,1000);
-  
 </script>
+
 
 </body>
 </html>
