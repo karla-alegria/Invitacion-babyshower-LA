@@ -311,6 +311,23 @@
   overflow: hidden;
   /*box-shadow: 0 12px 30px rgba(2,20,40,.08);*/
 }
+/* 🔄 Balanceo lateral */
+.swingElephant{
+  animation: swingSide 3.5s ease-in-out infinite;
+  transform-origin: center top;
+}
+
+@keyframes swingSide{
+  0%{ transform: rotate(0deg); }
+  25%{ transform: rotate(4deg); }
+  50%{ transform: rotate(0deg); }
+  75%{ transform: rotate(-4deg); }
+  100%{ transform: rotate(0deg); }
+}
+
+
+
+ 
   .imgBox img{ display:block; width:100%; height:auto; }
 
   /* Bloque padres */
@@ -425,6 +442,14 @@
 /* (Opcional) reduce animación si el usuario lo pide por accesibilidad */
 @media (prefers-reduced-motion: reduce){
   .floatMonth, .popDay{ animation: none; }
+}
+
+ @media (prefers-reduced-motion: reduce){
+  .bounceElephant,
+  .swingElephant,
+  .popElephant{
+    animation: none;
+  }
 }
 
 
