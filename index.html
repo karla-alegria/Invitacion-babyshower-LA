@@ -138,15 +138,17 @@ body{
 .paseWrap{
   position:absolute;
   left:50%;
-  top:82%;                         /* ✅ más cerca del sobre */
-  transform:translate(-50%,-50%);
-  z-index:50;
+  top:60%;                         /* ⬆️ más arriba, centrado en el sobre */
+  transform:translate(-50%, -50%);
+  z-index:60;
+  pointer-events:none;
 }
 
 .paseWrap img{
-  width:420px;                     /* ✅ más grande */
-  max-width:132%;                  /* ✅ sobresale del sobre */
-  filter:drop-shadow(0 22px 40px rgba(0,0,0,.26));
+  width:520px;                     /* 🔥 MÁS GRANDE */
+  max-width:160%;                  /* 🔥 sobresale del sobre */
+  height:auto;
+  filter:drop-shadow(0 24px 45px rgba(0,0,0,.28));
 }
 
 /* ===== Animación al tocar sello ===== */
