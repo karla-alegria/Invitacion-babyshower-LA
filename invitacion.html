@@ -513,10 +513,30 @@ btn.onclick = async () => {
   }
 };
 
-// ✅ intenta auto-play al cargar la hoja 2
-document.addEventListener("DOMContentLoaded", () => {
-  tryAutoPlayFromEnvelope();
+// 🎵 Intentar autoplay si viene desde el sobre (hoja 1)
+document.addEventListener("DOMContentLoaded", async () => {
+  let shouldPlay = false;
+
+  try {
+    shouldPlay = sessionStorage.getItem("playMusicOnNextPage") === "1";
+    sessionStorage.removeItem("playMusicOnNextPage");
+  } catch(e){}
+
+  if (!shouldPlay) return;
+
+  try {
+    await audio.play();
+    play = true;
+    icon.innerHTML =
+      '<path fill="#1f2937" d="M6 5h4v14H6zm8 0h4v14h-4z"/>';
+  } catch (err) {
+    // Si el navegador lo bloquea, no pasa nada
+    play = false;
+    icon.innerHTML =
+      '<path fill="#1f2937" d="M8 5v14l11-7z"/>';
+  }
 });
+
 
   /* Contador – 24/01/2026 6:00 PM (Perú -05:00) */
   const EVENT_DATE = new Date("2026-01-24T18:00:00-05:00");
