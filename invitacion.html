@@ -127,47 +127,56 @@
   border-bottom: 2px solid rgba(31,41,55,0.25);
 }
 
-/* ===== FECHA LIMPIA ESTILO TIKTOK ===== */
+/* ===== FECHA LIMPIA (centrado real con GRID) ===== */
 .eventDateClean{
-  text-align: center;
+  text-align:center;
   margin: 18px 0 18px;
-  color: #1f2937;
+  color:#1f2937;
 }
 
 /* ENERO arriba */
 .monthTop{
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 6px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:6px;
 }
 
-/* Línea SABADO 24 2026 */
-.dateLine{
-  display: inline-flex;          /* 👈 clave */
+/* ✅ CENTRADO REAL:
+   - 3 columnas: izquierda (SÁBADO), centro (24), derecha (2026)
+   - el centro SIEMPRE queda perfecto
+*/
+.dateLineGrid{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: baseline;
-  gap: 10px;
-  transform: translateX(-6px);   /* 👈 ajuste óptico */
+  column-gap: 12px;
+  max-width: 320px;       /* controla “ancho” del bloque */
+  margin: 0 auto;         /* centra el grid completo */
 }
 
+/* izquierda */
 .dayName{
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
+  justify-self:end;       /* pega SABADO hacia el centro */
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.5px;
 }
 
+/* centro (24) */
 .dayNumber{
-  font-size: 56px;
-  font-weight: 900;
-  line-height: 1;
+  justify-self:center;
+  font-size:56px;
+  font-weight:900;
+  line-height:1;
 }
 
+/* derecha */
 .yearNumber{
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-top: 6px;
-  margin-left: 2px;
+  justify-self:start;     /* pega 2026 hacia el centro */
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:1px;
 }
 
 /* Hora */
@@ -177,6 +186,37 @@
   font-weight: 700;
   letter-spacing: 1.2px;
 }
+
+/* ===== ANIMACIONES ===== */
+
+/* ENERO flotando */
+.floatMonth{
+  animation: floatY 2.6s ease-in-out infinite;
+}
+
+/* 24 “pop” al cargar */
+.popDay{
+  animation: popIn .7s cubic-bezier(.2,1.6,.35,1) 1;
+  transform-origin: center;
+}
+
+/* keyframes */
+@keyframes floatY{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}
+
+@keyframes popIn{
+  0%{ transform: scale(.78); opacity: 0; }
+  60%{ transform: scale(1.08); opacity: 1; }
+  100%{ transform: scale(1); }
+}
+
+/* (Opcional) reduce animación si el usuario lo pide por accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .floatMonth, .popDay{ animation: none; }
+}
+
 
 
   /* Contador */
@@ -258,18 +298,16 @@
             <div class="parentsNames">Karla & Arturo</div>
 
             <div class="eventDateClean">
-  <div class="monthTop">ENERO</div>
+  <div class="monthTop floatMonth">ENERO</div>
 
-  <div class="dateLine">
+  <div class="dateLineGrid">
     <span class="dayName">SÁBADO</span>
-    <span class="dayNumber">24</span>
+    <span class="dayNumber popDay">24</span>
     <span class="yearNumber">2026</span>
   </div>
 
   <div class="dateTime">6:00 PM</div>
 </div>
-
-
 
             <div class="countdownCard">
               <div class="countTitle">¿CUÁNTO FALTA?</div>
