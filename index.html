@@ -253,15 +253,9 @@ body{
     if(sealBtn.dataset.busy === "1") return;
     sealBtn.dataset.busy = "1";
 
-    // ✅ Intentar reproducir música (esto SÍ lo permite el navegador porque viene del click)
-    if (music) {
-      // Guardamos una bandera para intentar continuar en la hoja 2
-      try { sessionStorage.setItem("playMusicOnNextPage", "1"); } catch(e){}
+   // ✅ Solo guardar bandera para que la hoja 2 intente reproducir
+try { sessionStorage.setItem("playMusicOnNextPage", "1"); } catch(e){}
 
-      music.play().catch(() => {
-        // Si el navegador lo bloquea igual, no rompemos nada
-      });
-    }
 
     sealBtn.classList.add("is-pressed");
     envelopeImg.classList.add("is-opening");
