@@ -70,6 +70,86 @@
   text-shadow:
     0.6px 0.6px 0 rgba(0,0,0,.08); /* refuerzo visual */
 }
+ /* ===== BLOQUE PADRES (PÁGINA 2) ===== */
+.parentsBlock{
+  text-align:center;
+  margin:14px 0 22px;
+}
+
+/* Foto estilo TikTok / Polaroid */
+.parentsPhoto{
+  display:inline-block;
+  background:#fff;
+  padding:6px;
+  border-radius:6px;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
+  transform: rotate(-3deg);
+  margin-bottom:10px;
+}
+
+.parentsPhoto img{
+  display:block;
+  width:180px;
+  height:auto;
+}
+
+/* Textos */
+.parentsLabel{
+  font-size:13px;
+  color: rgba(31,41,55,.65);
+  margin-top:6px;
+}
+
+.parentsNames{
+  font-family: Georgia, "Times New Roman", serif;
+  font-size:18px;
+  font-weight:700;
+  color:#1f2937;
+  margin:2px 0 8px;
+}
+
+/* Fecha estilo TikTok */
+.eventDate{
+  margin-top:4px;
+}
+
+.eventDate .day{
+  font-size:12px;
+  letter-spacing:1.4px;
+  font-weight:600;
+  color: rgba(31,41,55,.7);
+}
+
+.eventDate .dateLine{
+  display:flex;
+  justify-content:center;
+  align-items:baseline;
+  gap:6px;
+  margin:2px 0;
+}
+
+.eventDate .month{
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+.eventDate .number{
+  font-size:28px;
+  font-weight:800;
+}
+
+.eventDate .year{
+  font-size:13px;
+  font-weight:600;
+}
+
+.eventDate .time{
+  font-size:12px;
+  letter-spacing:1px;
+  color: rgba(31,41,55,.7);
+}
+
 
   .content{
     position:relative;
@@ -161,6 +241,7 @@
   .imgBox{
   width: 70%;      /* prueba 80%, 70%, 60% */
   max-width: 300px; /* tamaño máximo */
+  margin: 0 auto;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -219,6 +300,29 @@
           <div class="imgBox">
             <img src="img/elefante-nombre.png" alt="Imagen temática">
           </div>
+
+         <!-- Foto de los padres -->
+<div class="parentsBlock">
+
+  <div class="parentsPhoto">
+    <img src="img/padres.png" alt="Foto de los padres">
+  </div>
+
+  <div class="parentsLabel">Mis Papis</div>
+  <div class="parentsNames">Karla & Arturo</div>
+
+  <div class="eventDate">
+    <div class="day">SÁBADO</div>
+    <div class="dateLine">
+      <span class="month">ENERO</span>
+      <span class="number">24</span>
+      <span class="year">2025</span>
+    </div>
+    <div class="time">6:00 PM</div>
+  </div>
+
+</div>
+
           
 
           <section class="card">
