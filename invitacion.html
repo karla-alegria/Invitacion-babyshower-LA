@@ -528,6 +528,29 @@ html,body{ height:100%; }
 
 .confirmBtn:active{ transform: scale(.99); }
 
+.confirmBox{
+  max-width:360px;
+  margin:40px auto 20px;   /* ⬅️ AQUÍ lo mueves verticalmente */
+  padding:14px;
+
+  background:
+    linear-gradient(180deg,
+      rgba(255,255,255,.35),
+      rgba(220,240,250,.25)
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius:26px;
+  border:1px solid rgba(255,255,255,.55);
+
+  box-shadow:
+    0 20px 50px rgba(2,20,40,.15),
+    inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+  
 .confirmThanks{
   margin-top: 14px;
   font-weight: 900;
@@ -715,28 +738,37 @@ html,body{ height:100%; }
   
 </div>
 
-<!-- CONFIRMACIÓN (nuevo diseño sin caja) -->
-<section class="confirmSection" id="confirmacion">
-  <div class="confirmHeader">
-    <img src="img/confirmacion.png" alt="Confirmación" class="confirmElephant">
+<!-- CONFIRMACIÓN -->
+<section class="confirmBox">
+    <div class="confirmContent">
+        <div class="confirmHeader">
+      <img src="img/elefante.png" alt="Elefante" class="confirmElephant">
 
-    <div class="confirmHeadText">
-      <div class="confirmTitle">Confirmación</div>
-      <div class="confirmDesc">Nos encantaría saber que nos acompañas.</div>
+      <div class="confirmText">
+        <h3 class="confirmTitle">Confirmación</h3>
+        <p class="confirmDesc">
+          Nos encantaría saber que nos acompañas.
+        </p>
+
+        <a class="confirmBtn"
+           href="https://wa.me/51923810888?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo%20🤩🤩"
+           target="_blank">
+           
+          <img src="img/whatsapp.png" class="waIcon">
+          Confirmar asistencia
+        </a>
+      </div>
     </div>
+
   </div>
 
-  <a class="confirmBtn" href="https://wa.me/51923810888?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo%20🤩🤩" target="_blank">
-    Confirma tu asistencia
-  </a>
-
-  <div class="confirmThanks">
-    Gracias<br>
-    <span>Por ser parte de este día especial</span>
-  </div>
 </section>
 
 
+<div class="confirmThanks">
+    Gracias<br>
+    <span>Por ser parte de este día especial</span>
+  </div>
 
 <audio id="bgMusic" preload="auto" loop>
   <source src="img/musica.mp3" type="audio/mpeg">
