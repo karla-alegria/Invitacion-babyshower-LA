@@ -139,7 +139,7 @@ body{
 .paseWrap{
   position:absolute;
   left:50%;
-  top:80%;                 /* ⬆️ SUBE EL PASE */
+  top:70%;                 /* ⬆️ SUBE EL PASE */
   transform:translate(-50%,-50%);
   z-index:50;
 }
@@ -151,42 +151,53 @@ body{
 }
 
 /* 📱 ===== AJUSTES CELULAR ===== */
-@media (max-width:420px){
+@media (max-width: 768px){
 
+  /* Tarjeta más compacta en alto */
   .card{
-    padding-top:14px;
-    padding-bottom:200px;
+    padding-top: 14px;
+    padding-bottom: 180px;   /* ⬆️ menos espacio vertical */
   }
 
+  /* Elefante más pequeño */
   .hero img{
-    width:260px;
+    width: 250px;
+    max-width: 80%;
   }
 
+  /* Texto más compacto */
   .subtitle{
-    margin-top:2px;
-    margin-bottom:8px;
-    font-size:25px;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    font-size: 24px;
+    text-align: center;
   }
 
+  /* Wrapper del sobre LIBRE para que el pase crezca */
   .envelopeWrap{
-  padding-bottom:110px;    /* ⬆️ menos espacio abajo */
-}
-
-  .sealBtn{
-    top:55%;
-    width:64px;
-    height:64px;
+    width: 100%;
+    max-width: 360px;        /* controla el sobre */
+    padding-bottom: 110px;   /* espacio justo para el pase */
   }
 
+  /* Sello un poco más pequeño */
+  .sealBtn{
+    top: 55%;
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Pase más arriba y MÁS GRANDE */
   .paseWrap{
-    top:80%;
+    top: 76%;                /* ⬆️ sube el pase */
   }
 
   .paseWrap img{
-    width:380px;
-    max-width:112%;
+    width: 460px;            /* 🔥 pase grande */
+    max-width: 135%;         /* sobresale del sobre */
   }
 }
+  
 </style>
 </head>
 
