@@ -1,371 +1,221 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Invitación - Luis Arturo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invitación · Baby Shower</title>
 
-  <!-- Fuente estilo manuscrita (similar a tu diseño) -->
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      /* 🐘 Paleta elefante (celeste/azul) */
-      --celeste-1: #EAF6FA;  /* muy claro */
-      --celeste-2: #BFDDE6;  /* principal */
-      --celeste-3: #9CCAD9;  /* acento */
-      --azul-sombra: rgba(2,20,40,.18);
-      --texto: #6B4A2B;      /* marrón suave */
-      --blanco: #ffffff;
-    }
 
-    *{ box-sizing: border-box; }
-    body{
-      margin: 0;
-      font-family: 'Patrick Hand', cursive;
-      color: var(--texto);
-      min-height: 100vh;
+<style>
+  :root{
+    --celeste-1:#EAF6FA;
+    --celeste-2:#BFDDE6;
+    --celeste-3:#9CCAD9;
+    --texto:#6B4A2B;
+    --sombra:rgba(2,20,40,.18);
+  }
 
-      /* Fondo general suave */
-      background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,.9) 0%, rgba(255,255,255,0) 55%),
-        radial-gradient(circle at 80% 90%, rgba(191,221,230,.55) 0%, rgba(255,255,255,0) 60%),
-        linear-gradient(180deg, #f7fcff 0%, #eaf6fa 60%, #f7fcff 100%);
-      padding: 18px 14px;
-    }
+  .invitation{
+    margin-top: 16px;
+    padding-bottom: 24px;
+    font-family: 'Patrick Hand', cursive;
+    color: var(--texto);
+  }
 
-    .app{
-      max-width: 430px;
-      margin: 0 auto;
-    }
+  /* ===== Botón música ===== */
+  .musicRow{
+    display:flex;
+    justify-content:center;
+    margin:16px 0 22px;
+  }
+  .musicBtn{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:22px;
+    background:rgba(255,255,255,.6);
+    border:1px solid rgba(255,255,255,.6);
+    backdrop-filter:blur(6px);
+    box-shadow:0 14px 30px var(--sombra);
+    cursor:pointer;
+    transition:.2s;
+  }
+  .musicBtn:hover{ transform:scale(1.06); }
 
-    /* =========================
-       HOJA 1 (PORTADA)
-    ========================== */
-    .cover{
-      background: rgba(255,255,255,.55);
-      border: 1px solid rgba(255,255,255,.55);
-      border-radius: 28px;
-      padding: 18px 16px;
-      box-shadow: 0 16px 40px rgba(2,20,40,.12);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      text-align: center;
-    }
+  /* ===== Card estilo TikTok ===== */
+  .tiktokCard{
+    position:relative;
+    overflow:hidden;
+    max-width:360px;
+    margin:24px auto;
+    padding:28px 22px;
+    text-align:center;
+    border-radius:34px;
 
-    .coverImg{
-      width: 100%;
-      border-radius: 18px;
-      overflow: hidden;
-      margin-bottom: 14px;
-      background: rgba(255,255,255,.5);
-      box-shadow: 0 10px 24px rgba(2,20,40,.12);
-    }
+    background:
+      radial-gradient(circle at 20% 10%, rgba(255,255,255,.65) 0%, transparent 45%),
+      radial-gradient(circle at 85% 85%, rgba(156,202,217,.35) 0%, transparent 55%),
+      linear-gradient(
+        180deg,
+        rgba(234,246,250,.72) 0%,
+        rgba(191,221,230,.70) 55%,
+        rgba(165,210,230,.68) 100%
+      );
 
-    .coverImg img{
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    border:1px solid rgba(255,255,255,.55);
+    backdrop-filter:blur(6px);
+    box-shadow:0 18px 40px var(--sombra);
+  }
 
-    .coverTitle{
-      font-size: 30px;
-      margin: 8px 0 2px;
-      letter-spacing: .2px;
-    }
-    .coverSubtitle{
-      font-size: 22px;
-      margin: 0 0 12px;
-      opacity: .95;
-    }
+  /* ===== Brillos ===== */
+  .sparkles{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.55;
+    mix-blend-mode:screen;
+    background:
+      radial-gradient(circle, rgba(255,255,255,.95) 0 1px, transparent 2px) 0 0/70px 70px,
+      radial-gradient(circle, rgba(255,255,255,.75) 0 1px, transparent 2px) 30px 20px/90px 90px,
+      radial-gradient(circle, rgba(255,255,255,.55) 0 1px, transparent 2px) 10px 40px/110px 110px,
+      radial-gradient(circle at 15% 30%, rgba(255,255,255,.35), transparent 45%),
+      radial-gradient(circle at 85% 70%, rgba(255,255,255,.28), transparent 50%);
+  }
+  .tiktokCard > *:not(.sparkles){
+    position:relative;
+    z-index:1;
+  }
 
-    .btnPrimary{
-      display: inline-block;
-      padding: 12px 26px;
-      border-radius: 18px;
-      background: var(--celeste-2);
-      color: var(--texto);
-      text-decoration: none;
-      font-size: 18px;
-      box-shadow: inset 0 -3px 0 rgba(0,0,0,.12), 0 10px 22px rgba(2,20,40,.15);
-      transition: transform .2s ease;
-      cursor: pointer;
-      border: none;
-    }
-    .btnPrimary:hover{ transform: scale(1.03); }
+  /* ===== Textos ===== */
+  .cardTitle{
+    font-size:24px;
+    margin:0 0 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+  }
+  .cardText{
+    font-size:18px;
+    line-height:1.45;
+    margin:0 0 16px;
+  }
 
-    /* =========================
-       HOJA 2 (INVITACIÓN)
-    ========================== */
-    .invitation{
-      display: none; /* oculto hasta abrir */
-      margin-top: 14px;
-      padding-bottom: 18px;
-    }
+  /* ===== Mapa ===== */
+  .mapBox{
+    width:100%;
+    height:170px;
+    border-radius:18px;
+    overflow:hidden;
+    margin:12px 0 16px;
+    background:rgba(255,255,255,.85);
+    border:4px solid rgba(156,202,217,.75);
+    box-shadow:0 10px 22px rgba(2,20,40,.12);
+  }
+  .mapBox iframe{
+    width:100%;
+    height:100%;
+    border:none;
+  }
 
-    .musicRow{
-      display: flex;
-      justify-content: center;
-      margin: 14px 0 18px;
-    }
+  /* ===== Botones ===== */
+  .btnSoft{
+    display:inline-block;
+    padding:12px 26px;
+    background:rgba(191,221,230,.92);
+    color:var(--texto);
+    border-radius:18px;
+    text-decoration:none;
+    font-size:18px;
+    box-shadow:
+      inset 0 -3px 0 rgba(0,0,0,.12),
+      0 10px 22px rgba(2,20,40,.15);
+    transition:.2s;
+  }
+  .btnSoft:hover{ transform:scale(1.05); }
 
-    .musicBtn{
-      width: 56px;
-      height: 56px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: rgba(255,255,255,.55);
-      border: 1px solid rgba(255,255,255,.6);
-      box-shadow: 0 14px 30px rgba(2,20,40,.14);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      cursor: pointer;
-      user-select: none;
-      transition: transform .2s ease;
-      font-size: 22px;
-    }
-    .musicBtn:hover{ transform: scale(1.05); }
+  .iconoCarta{
+    font-size:30px;
+    margin-bottom:6px;
+  }
+</style>
 
-    /* =========================
-       CARD estilo TikTok (Glass + brillos)
-    ========================== */
-    .tiktokCard{
-      position: relative;
-      overflow: hidden;
-      border-radius: 34px;
-      padding: 28px 22px;
-      text-align: center;
-      max-width: 360px;
-      margin: 22px auto;
+<section class="invitation">
 
-      /* Fondo celeste/azul elegante + semi-transparente */
-      background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,.65) 0%, rgba(255,255,255,0) 45%),
-        radial-gradient(circle at 85% 85%, rgba(156,202,217,.35) 0%, rgba(255,255,255,0) 55%),
-        linear-gradient(180deg,
-          rgba(234,246,250,.72) 0%,
-          rgba(191,221,230,.70) 55%,
-          rgba(165,210,230,.68) 100%
-        );
-
-      border: 1px solid rgba(255,255,255,.55);
-      box-shadow: 0 18px 40px var(--azul-sombra);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-
-    /* capa de brillos */
-    .tiktokCard .sparkles{
-      pointer-events: none;
-      position: absolute;
-      inset: 0;
-      opacity: .55;
-      mix-blend-mode: screen;
-
-      background:
-        radial-gradient(circle, rgba(255,255,255,.95) 0 1px, rgba(255,255,255,0) 2px) 0 0/70px 70px,
-        radial-gradient(circle, rgba(255,255,255,.75) 0 1px, rgba(255,255,255,0) 2px) 30px 20px/90px 90px,
-        radial-gradient(circle, rgba(255,255,255,.55) 0 1px, rgba(255,255,255,0) 2px) 10px 40px/110px 110px,
-        radial-gradient(circle at 15% 30%, rgba(255,255,255,.35), rgba(255,255,255,0) 45%),
-        radial-gradient(circle at 85% 70%, rgba(255,255,255,.28), rgba(255,255,255,0) 50%);
-    }
-
-    /* asegurar contenido arriba de brillos */
-    .tiktokCard > *:not(.sparkles){
-      position: relative;
-      z-index: 1;
-    }
-
-    .cardTitle{
-      margin: 0 0 10px;
-      font-size: 24px;
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .cardText{
-      margin: 0 0 16px;
-      font-size: 18px;
-      line-height: 1.45;
-    }
-
-    /* Map */
-    .mapBox{
-      width: 100%;
-      height: 170px;
-      border-radius: 18px;
-      overflow: hidden;
-      margin: 12px 0 16px;
-      border: 4px solid rgba(156,202,217,.75);
-      background: rgba(255,255,255,.85);
-      box-shadow: 0 10px 22px rgba(2,20,40,.12);
-    }
-    .mapBox iframe{
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    .btnSoft{
-      display: inline-block;
-      padding: 12px 24px;
-      background: rgba(191,221,230,.92);
-      color: var(--texto);
-      border-radius: 18px;
-      text-decoration: none;
-      font-size: 18px;
-      box-shadow:
-        inset 0 -3px 0 rgba(0,0,0,.12),
-        0 10px 22px rgba(2,20,40,.15);
-      transition: transform .2s ease;
-    }
-    .btnSoft:hover{ transform: scale(1.04); }
-
-    /* Ícono carta */
-    .iconoCarta{
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
-
-    /* Separación suave entre cards */
-    .spacer{ height: 8px; }
-
-    /* =========================
-       Mostrar/ocultar por JS
-    ========================== */
-    .hidden{ display:none !important; }
-  </style>
-</head>
-
-<body>
-  <div class="app">
-
-    <!-- =========================
-         HOJA 1: PORTADA
-    ========================== -->
-    <section class="cover" id="cover">
-      <!-- Cambia la imagen por la tuya -->
-      <div class="coverImg">
-        <img src="TU_IMAGEN_PORTADA.jpg" alt="Portada Baby Shower">
-      </div>
-
-      <div class="coverTitle">Luis Arturo</div>
-      <div class="coverSubtitle">Mi Baby Shower</div>
-
-      <button class="btnPrimary" id="btnAbrir">Ver invitación</button>
-    </section>
-
-    <!-- =========================
-         HOJA 2: INVITACIÓN (SCROLL)
-    ========================== -->
-    <section class="invitation" id="invitation">
-
-      <!-- Botón música centrado (solo ícono play) -->
-      <div class="musicRow">
-        <div class="musicBtn" id="musicBtn" title="Reproducir música">▶</div>
-      </div>
-
-      <!-- Audio (opcional): reemplaza la ruta -->
-      <audio id="bgMusic" preload="none">
-        <source src="TU_MUSICA.mp3" type="audio/mpeg">
-      </audio>
-
-      <!-- =========================
-           RECEPCIÓN
-      ========================== -->
-      <div class="tiktokCard">
-        <div class="sparkles"></div>
-
-        <h3 class="cardTitle">📍 Recepción</h3>
-
-        <p class="cardText">
-          Mz. G lote 19<br>
-          Urb. Los Lirios<br>
-          Lima, SMP
-        </p>
-
-        <div class="mapBox">
-          <!-- Cambia por tu ubicación exacta -->
-          <iframe
-            src="https://www.google.com/maps?q=Urb%20Los%20Lirios%20SMP%20Lima%20Peru&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-
-        <a class="btnSoft"
-           target="_blank"
-           href="https://maps.google.com/?q=Urb+Los+Lirios+SMP+Lima+Peru">
-          Mapa de ubicación
-        </a>
-      </div>
-
-      <div class="spacer"></div>
-
-      <!-- =========================
-           CONFIRMACIÓN
-      ========================== -->
-      <div class="tiktokCard">
-        <div class="sparkles"></div>
-
-        <div class="iconoCarta">✉️</div>
-        <h3 class="cardTitle">Confirmación</h3>
-
-        <p class="cardText" style="font-size:17px;">
-          Nos encantaría saber que nos acompañas.<br>
-          Por favor confirma tu asistencia.
-        </p>
-
-        <!-- Cambia el número y el texto -->
-        <a class="btnSoft"
-           target="_blank"
-           href="https://wa.me/51999999999?text=Hola%20😊%20Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo">
-          Confirmar asistencia
-        </a>
-      </div>
-
-    </section>
+  <!-- Botón música -->
+  <div class="musicRow">
+    <div class="musicBtn" id="musicBtn">▶</div>
   </div>
 
-  <script>
-    // Abrir invitación (bloquea ver la hoja 2 hasta presionar el botón)
-    const btnAbrir = document.getElementById('btnAbrir');
-    const cover = document.getElementById('cover');
-    const invitation = document.getElementById('invitation');
+  <audio id="bgMusic">
+    <source src="TU_MUSICA.mp3" type="audio/mpeg">
+  </audio>
 
-    btnAbrir.addEventListener('click', () => {
-      cover.classList.add('hidden');
-      invitation.style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  <!-- ===== RECEPCIÓN ===== -->
+  <div class="tiktokCard">
+    <div class="sparkles"></div>
 
-    // Música (play/pause)
-    const musicBtn = document.getElementById('musicBtn');
-    const bgMusic = document.getElementById('bgMusic');
-    let playing = false;
+    <h3 class="cardTitle">📍 Recepción</h3>
 
-    musicBtn.addEventListener('click', async () => {
-      try{
-        if(!playing){
-          await bgMusic.play();
-          playing = true;
-          musicBtn.textContent = '⏸';
-        }else{
-          bgMusic.pause();
-          playing = false;
-          musicBtn.textContent = '▶';
-        }
-      }catch(e){
-        // si el navegador bloquea autoplay por permisos, el click debería permitirlo igual
-        console.log(e);
-      }
-    });
-  </script>
-</body>
-</html>
+    <p class="cardText">
+      Mz. G lote 19<br>
+      Urb. Los Lirios<br>
+      Lima, SMP
+    </p>
+
+    <div class="mapBox">
+      <iframe
+        src="https://www.google.com/maps?q=Urb%20Los%20Lirios%20SMP%20Lima%20Peru&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <a class="btnSoft" target="_blank"
+       href="https://maps.google.com/?q=Urb+Los+Lirios+SMP+Lima+Peru">
+      Mapa de ubicación
+    </a>
+  </div>
+
+  <!-- ===== CONFIRMACIÓN ===== -->
+  <div class="tiktokCard">
+    <div class="sparkles"></div>
+
+    <div class="iconoCarta">✉️</div>
+    <h3 class="cardTitle">Confirmación</h3>
+
+    <p class="cardText" style="font-size:17px;">
+      Nos encantaría saber que nos acompañas.<br>
+      Por favor confirma tu asistencia.
+    </p>
+
+    <a class="btnSoft" target="_blank"
+       href="https://wa.me/51999999999?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo">
+      Confirmar asistencia
+    </a>
+  </div>
+
+</section>
+
+<script>
+  const musicBtn = document.getElementById('musicBtn');
+  const bgMusic = document.getElementById('bgMusic');
+  let playing = false;
+
+  musicBtn.addEventListener('click', async () => {
+    if(!playing){
+      await bgMusic.play();
+      musicBtn.textContent = '⏸';
+    }else{
+      bgMusic.pause();
+      musicBtn.textContent = '▶';
+    }
+    playing = !playing;
+  });
+</script>
+
 
 
