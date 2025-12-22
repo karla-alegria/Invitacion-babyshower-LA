@@ -270,19 +270,26 @@ html,body{ height:100%; }
   text-align:center;
   color:#6B4A2B;
 
+  /* 🌟 Fondo más transparente */
   background:
-    radial-gradient(circle at 20% 10%, rgba(255,255,255,.7) 0%, transparent 45%),
-    radial-gradient(circle at 85% 85%, rgba(156,202,217,.35) 0%, transparent 55%),
+    radial-gradient(circle at 20% 15%, rgba(255,255,255,.85) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(180,220,240,.35) 0%, transparent 55%),
     linear-gradient(180deg,
-      rgba(234,246,250,.75),
-      rgba(191,221,230,.72)
+      rgba(255,255,255,.45),
+      rgba(200,230,245,.35)
     );
 
-  backdrop-filter:blur(6px);
-  border:1px solid rgba(255,255,255,.55);
-  box-shadow:0 18px 40px rgba(2,20,40,.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border:1px solid rgba(255,255,255,.65);
+  box-shadow:
+    0 18px 40px rgba(2,20,40,.18),
+    inset 0 1px 0 rgba(255,255,255,.6);
+
   overflow:hidden;
 }
+
 
 .boxElefante .sparkles{
   position:absolute;
