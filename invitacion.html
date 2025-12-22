@@ -450,7 +450,7 @@ html,body{ height:100%; }
 </div>
 
 <audio id="bgMusic" preload="auto" loop>
-  <source src="audio/audio.mp3" type="audio/mpeg">
+  <source src="img/musica.mp3" type="audio/mpeg">
 </audio>
 
 </main>
@@ -472,8 +472,6 @@ function setIcon(isPlaying){
 }
 
 async function tryAutoPlayFromEnvelope(){
-  // ✅ Si vienes del sobre (hoja 1), en hoja 1 dejamos una bandera:
-  // sessionStorage.setItem("playMusicOnNextPage","1")
   let shouldPlay = false;
   try{
     shouldPlay = sessionStorage.getItem("playMusicOnNextPage") === "1";
@@ -481,19 +479,21 @@ async function tryAutoPlayFromEnvelope(){
 
   if(!shouldPlay) return;
 
-  try{ sessionStorage.removeItem("playMusicOnNextPage"); }catch(e){}
-
   try{
     await audio.play();
     play = true;
     setIcon(true);
+
+    // ✅ solo si funcionó, recién borramos la bandera
+    try{ sessionStorage.removeItem("playMusicOnNextPage"); }catch(e){}
   }catch(err){
-    // Si el navegador lo bloquea, no pasa nada:
-    // el usuario podrá darle play manual con el botón.
+    // ❗ si lo bloquea, NO borramos la bandera
+    // así el fallback del primer toque podrá arrancar la música
     play = false;
     setIcon(false);
   }
 }
+
 
 btn.onclick = async () => {
   if(!play){
