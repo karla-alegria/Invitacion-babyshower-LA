@@ -453,11 +453,6 @@ html,body{ height:100%; }
 
 
 
-.confirmText{
-  text-align: left;
-  max-width: 200px;
-}
-
 .confirmTitle{
   font-size: 20px;
   font-weight: 900;
@@ -475,6 +470,7 @@ html,body{ height:100%; }
 .confirmBtn{
   display:flex;
   align-items:center;
+  justify-content:center;
   gap:10px;
 
   padding:12px 18px;
@@ -500,7 +496,7 @@ html,body{ height:100%; }
   max-width:360px;
   margin:40px auto 20px;   /* ⬅️ AQUÍ lo mueves verticalmente */
   padding:14px;
-
+  text-align: center;
   background:
     linear-gradient(180deg,
       rgba(255,255,255,.35),
@@ -531,9 +527,7 @@ html,body{ height:100%; }
     text-align:center;
   }
 
-  .confirmText{
-    text-align:center;
-  }
+
 }
 
   
@@ -586,45 +580,16 @@ html,body{ height:100%; }
 }
 
   
-  
-/* Mobile: se apila (imagen arriba, texto abajo) */
-@media (max-width: 420px){
-  .confirmRow{
-    flex-direction: column;
-    text-align: center;
-  }
-  .confirmText{
-    text-align: center;
-    max-width: 320px;
-  }
-  .confirmImgWrap{ width: 140px; height: 140px; }
-}
-
 .confirmWrapper{
-  position:relative;
-  max-width:420px;
-  margin:50px auto 30px;
-  padding-left:130px; /* espacio para el elefante */
+  max-width: 460px;
+  margin: 50px auto 30px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
 }
-
-  
-
-  .btnRow{ display:flex; gap:10px; margin-top:12px; }
-  .btn{
-    flex:1; padding:12px; border-radius:14px;
-    border:1px solid rgba(31,41,55,.10); background: rgba(255,255,255,.78);
-    cursor:pointer; font-weight:700; font-size:13px; color:#1f2937;
-    text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px;
-    box-shadow:0 12px 28px rgba(2,20,40,.10);
-  }
-  .btnPrimary{ background: rgba(165,210,245,.70); }
-  .btn:active{ transform:scale(.99); }
-
-  
-/* ======================
-   CONFIRMACIÓN
-====================== */
-.iconoCarta{ font-size:30px;margin-bottom:6px; }
 
 /* ======================
    MOBILE SCROLL
@@ -641,28 +606,28 @@ html,body{ height:100%; }
   }
 /* 🐘 Elefante FUERA del box (solo confirmación) */
 .confirmElephantOutside{
-  position:absolute;
-  left:0;
-  top:50%;
-  transform:translateY(-50%);
-  width:120px;
-  height:auto;
-  z-index:2;
-  pointer-events:none;
+  width: 150px;
+  height: auto;
+  display: block;
+  flex: 0 0 auto;
+  pointer-events: none;
 }
 
+
 /* En móvil: el elefante se pone arriba y no estorba */
-@media (max-width:420px){
+@media (max-width: 420px){
   .confirmWrapper{
-    padding-left:130;
-    text-align:center;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
   }
+
   .confirmElephantOutside{
-    position:static;
-    transform:none;
-    margin:0 auto 10px;
-    width:140px;
-    display:block;
+    width: 120px;
+  }
+
+  .confirmBox{
+    padding: 14px;
   }
 }
 
