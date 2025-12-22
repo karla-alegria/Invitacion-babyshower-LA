@@ -290,6 +290,24 @@ html,body{ height:100%; }
   overflow:hidden;
 }
 
+  .boxElefante::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+
+  background:
+    linear-gradient(120deg,
+      rgba(255,255,255,.6),
+      rgba(255,255,255,0) 30%,
+      rgba(255,255,255,.35) 60%,
+      rgba(255,255,255,0)
+    );
+
+  opacity:.35;
+}
+
 
 .boxElefante .sparkles{
   position:absolute;
