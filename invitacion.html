@@ -73,20 +73,20 @@ html,body{ height:100%; }
   justify-content:center;
   padding:6px 0 12px;
 }
-.musicBtn{
-  width:64px;height:64px;border-radius:50%;
-  border:1px solid rgba(31,41,55,.12);
-  background:rgba(255,255,255,.7);
-  backdrop-filter:blur(6px);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;
-  box-shadow:0 10px 26px rgba(2,20,40,.10);
-  position: absolute;
-  top: 16px;
-  left: 50px;     /* o right:16px */
-  left: auto;
-}
-.musicIcon{ width:26px;height:26px; }
+/* Música */
+    .musicWrap{ display:flex; justify-content:center; padding:6px 0 12px; }
+    .musicBtn{
+      width:64px; height:64px; border-radius:999px;
+      border:1px solid rgba(31,41,55,.12);
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(6px);
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer;
+      box-shadow: 0 10px 26px rgba(2,20,40,.10);
+      transition: transform .08s ease;
+    }
+    .musicBtn:active{ transform:scale(.98); }
+    .musicIcon{ width:26px; height:26px; display:block; }
 
 /* ======================
    PORTADA
