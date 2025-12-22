@@ -48,6 +48,216 @@
     background:rgba(255,255,255,.62);
     z-index:0; pointer-events:none;
   }
+ .direccionBox{
+  position: relative;
+  padding: 28px 22px;
+  border-radius: 34px;
+  text-align: center;
+  max-width: 360px;
+  margin: 30px auto;
+  font-family: 'Patrick Hand', cursive;
+  color: #6B4A2B;
+
+  /* 🐘 Fondo celeste elegante */
+  background:
+    radial-gradient(circle at top left, #FFFFFF 0%, transparent 45%),
+    radial-gradient(circle at bottom right, #9CCAD9 0%, transparent 45%),
+    linear-gradient(180deg, #EAF6FA 0%, #BFDDE6 100%);
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.18);
+}
+
+
+ .tituloUbicacion{
+  margin: 0 0 12px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+ .btnMapa{
+  display: inline-block;
+  padding: 10px 22px;
+  background: #BFDDE6;
+  color: #6B4A2B;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,.1),
+              0 6px 14px rgba(0,0,0,.15);
+  transition: transform .2s ease;
+}
+
+.btnMapa:hover{
+  transform: scale(1.05);
+}
+
+
+.direccionTexto{
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.mapBox{
+  width: 100%;
+  height: 160px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  border: 4px solid #9CCAD9;   /* azul suave */
+  background: #FFFFFF;
+}
+
+
+.mapBox iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.btnMapa{
+  display: inline-block;
+  padding: 10px 22px;
+  background: #BFDDE6;
+  color: #6B4A2B;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow:
+    inset 0 -3px 0 rgba(0,0,0,.12),
+    0 6px 14px rgba(0,0,0,.15);
+  transition: transform .2s ease;
+}
+
+.btnMapa:hover{
+  transform: scale(1.05);
+}
+
+ 
+.confirmacionBox{
+  max-width: 360px;
+  margin: 40px auto;
+  padding: 28px 22px;
+  border-radius: 34px;
+  text-align: center;
+  font-family: 'Patrick Hand', cursive;
+  color: #6B4A2B;
+
+  /* 🎨 Fondo elegante */
+  background:
+    radial-gradient(circle at top right, #FFF6E8 0%, transparent 45%),
+    radial-gradient(circle at bottom left, #BFDDE6 0%, transparent 40%),
+    linear-gradient(180deg, #E8C27A 0%, #E5B96D 100%);
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.18);
+}
+
+.iconoCarta{
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.tituloConfirmacion{
+  font-size: 22px;
+  margin: 0 0 10px;
+}
+
+.textoConfirmacion{
+  font-size: 15.5px;
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+
+.btnConfirmar{
+  display: inline-block;
+  padding: 12px 22px;
+  background: #BFDDE6;          /* celeste elefante */
+  color: #6B4A2B;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow:
+    inset 0 -3px 0 rgba(0,0,0,.12),
+    0 6px 14px rgba(0,0,0,.15);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btnConfirmar:hover{
+  transform: scale(1.05);
+  box-shadow:
+    inset 0 -3px 0 rgba(0,0,0,.15),
+    0 10px 20px rgba(0,0,0,.2);
+}
+ .boxElefante{
+  position: relative;
+  padding: 28px 22px;
+  border-radius: 34px;
+  text-align: center;
+  max-width: 360px;
+  margin: 30px auto;
+  font-family: 'Patrick Hand', cursive;
+  color: #6B4A2B;
+
+  /* 🐘 Fondo celeste + transparencia */
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.6) 0%, transparent 45%),
+    radial-gradient(circle at bottom right, rgba(156,202,217,.5) 0%, transparent 45%),
+    linear-gradient(
+      180deg,
+      rgba(234,246,250,.75) 0%,
+      rgba(191,221,230,.75) 100%
+    );
+
+  backdrop-filter: blur(6px);          /* efecto glass */
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.15);
+}
+
+.tiktokCard{
+  position: relative;
+  overflow: hidden;
+  border-radius: 34px;
+
+  /* Fondo celeste/azul elegante */
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 45%),
+    radial-gradient(circle at 80% 90%, rgba(120,190,220,.35) 0%, rgba(255,255,255,0) 55%),
+    linear-gradient(180deg, rgba(235,248,252,.85) 0%, rgba(190,225,238,.85) 55%, rgba(165,210,230,.85) 100%);
+
+  /* “Glass” suave */
+  border: 1px solid rgba(255,255,255,.55);
+  box-shadow: 0 18px 40px rgba(2,20,40,.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Capa de brillos tipo TikTok */
+.tiktokCard .sparkles{
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: .55;
+  mix-blend-mode: screen;
+
+  /* puntitos + destellos */
+  background:
+    radial-gradient(circle, rgba(255,255,255,.95) 0 1px, rgba(255,255,255,0) 2px) 0 0/70px 70px,
+    radial-gradient(circle, rgba(255,255,255,.75) 0 1px, rgba(255,255,255,0) 2px) 30px 20px/90px 90px,
+    radial-gradient(circle, rgba(255,255,255,.55) 0 1px, rgba(255,255,255,0) 2px) 10px 40px/110px 110px,
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,.35), rgba(255,255,255,0) 45%),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,.28), rgba(255,255,255,0) 50%);
+}
+
+/* Para que el contenido quede encima de los brillos */
+.tiktokCard > *:not(.sparkles){
+  position: relative;
+  z-index: 1;
+}
+
 
   .content{
     position:relative;
@@ -94,13 +304,30 @@
 
   /* Caja de imagen genérica */
   .imgBox{
-    width:100%;
-    border-radius:16px; overflow:hidden;
-    border:1px solid rgba(31,41,55,.10);
-    background: rgba(255,255,255,.7);
-    box-shadow:0 12px 30px rgba(2,20,40,.08);
-    margin-bottom:10px;
-  }
+  width: 60%;      /* prueba 80%, 70%, 60% */
+  max-width: 300px; /* tamaño máximo */
+  margin: 0 auto;  /* centrar */
+  /*border-radius: 16px;*/
+  overflow: hidden;
+  /*box-shadow: 0 12px 30px rgba(2,20,40,.08);*/
+}
+/* 🔄 Balanceo lateral */
+.swingElephant{
+  animation: swingSide 3.5s ease-in-out infinite;
+  transform-origin: center top;
+}
+
+@keyframes swingSide{
+  0%{ transform: rotate(0deg); }
+  25%{ transform: rotate(4deg); }
+  50%{ transform: rotate(0deg); }
+  75%{ transform: rotate(-4deg); }
+  100%{ transform: rotate(0deg); }
+}
+
+
+
+ 
   .imgBox img{ display:block; width:100%; height:auto; }
 
   /* Bloque padres */
@@ -110,31 +337,122 @@
     border-radius:6px; box-shadow:0 10px 25px rgba(0,0,0,.18);
     transform: rotate(-3deg); margin-bottom:10px;
   }
-  .parentsPhoto img{ display:block; width:180px; height:auto; }
+  .parentsPhoto img{ display:block; width:200px; height:auto; }
   .parentsLabel{
     font-size:13px; color: rgba(31,41,55,.65); margin-top:6px;
   }
   .parentsNames{
-    font-family: Georgia, "Times New Roman", serif;
-    font-size:18px; font-weight:700; color:#1f2937; margin:2px 0 8px;
-  }
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  /* 👇 espacio */
+  margin: 6px 0 14px;
+  /* 👇 línea inferior */
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgba(31,41,55,0.25);
+}
 
-  /* Fecha estilo TikTok */
-  .eventDate2{ text-align:center; margin-top:6px; margin-bottom:10px; color:#1f2937; }
-  .eventDate2 .topLine{
-    display:flex; justify-content:center; gap:10px;
-    font-size:12px; letter-spacing:1.4px; font-weight:700;
-    color: rgba(31,41,55,.70); text-transform:uppercase;
+/* ===== FECHA LIMPIA (centrado real con GRID) ===== */
+.eventDateClean{
+  text-align:center;
+  margin: 18px 0 18px;
+  color:#1f2937;
+}
+
+/* ENERO arriba */
+.monthTop{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:6px;
+}
+
+/* ✅ CENTRADO REAL:
+   - 3 columnas: izquierda (SÁBADO), centro (24), derecha (2026)
+   - el centro SIEMPRE queda perfecto
+*/
+.dateLineGrid{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: baseline;
+  column-gap: 12px;
+  max-width: 320px;       /* controla “ancho” del bloque */
+  margin: 0 auto;         /* centra el grid completo */
+}
+
+/* izquierda */
+.dayName{
+  justify-self:end;       /* pega SABADO hacia el centro */
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+/* centro (24) */
+.dayNumber{
+  justify-self:center;
+  font-size:56px;
+  font-weight:900;
+  line-height:1;
+}
+
+/* derecha */
+.yearNumber{
+  justify-self:start;     /* pega 2026 hacia el centro */
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* Hora */
+.dateTime{
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+/* ===== ANIMACIONES ===== */
+
+/* ENERO flotando */
+.floatMonth{
+  animation: floatY 2.6s ease-in-out infinite;
+}
+
+/* 24 “pop” al cargar */
+.popDay{
+  animation: popIn .7s cubic-bezier(.2,1.6,.35,1) 1;
+  transform-origin: center;
+}
+
+/* keyframes */
+@keyframes floatY{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}
+
+@keyframes popIn{
+  0%{ transform: scale(.78); opacity: 0; }
+  60%{ transform: scale(1.08); opacity: 1; }
+  100%{ transform: scale(1); }
+}
+
+/* (Opcional) reduce animación si el usuario lo pide por accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .floatMonth, .popDay{ animation: none; }
+}
+
+ @media (prefers-reduced-motion: reduce){
+  .bounceElephant,
+  .swingElephant,
+  .popElephant{
+    animation: none;
   }
-  .eventDate2 .midLine{
-    display:flex; justify-content:center; align-items:baseline; gap:10px; margin-top:2px;
-  }
-  .eventDate2 .bigDay{ font-size:44px; font-weight:800; line-height:1; }
-  .eventDate2 .year{ font-size:14px; font-weight:700; letter-spacing:1px; color: rgba(31,41,55,.70); }
-  .eventDate2 .timeLine{
-    margin-top:2px; font-size:12px; letter-spacing:1.2px; font-weight:700;
-    color: rgba(31,41,55,.70); text-transform:uppercase;
-  }
+}
+
+
 
   /* Contador */
   .countdownCard{
@@ -189,7 +507,10 @@
         <div class="content">
 
           <!-- Botón música -->
-          <div class="musicWrap">
+         <div class="boxElefante tiktokCard">
+  <div class="sparkles"></div>
+          
+         <div class="musicWrap">
             <button class="musicBtn" id="musicBtn" type="button" aria-label="Reproducir música">
               <svg class="musicIcon" id="musicIcon" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#1f2937" d="M8 5v14l11-7z"></path>
@@ -214,17 +535,17 @@
             <div class="parentsLabel">Mis Papis</div>
             <div class="parentsNames">Karla & Arturo</div>
 
-            <div class="eventDate2">
-              <div class="topLine">
-                <span class="dow">SÁBADO</span>
-                <span class="month">ENERO</span>
-              </div>
-              <div class="midLine">
-                <span class="bigDay">24</span>
-                <span class="year">2026</span>
-              </div>
-              <div class="timeLine">6:00 PM</div>
-            </div>
+            <div class="eventDateClean">
+  <div class="monthTop floatMonth">ENERO</div>
+
+  <div class="dateLineGrid">
+    <span class="dayName">SÁBADO</span>
+    <span class="dayNumber popDay">24</span>
+    <span class="yearNumber">2026</span>
+  </div>
+
+  <div class="dateTime">6:00 PM</div>
+</div>
 
             <div class="countdownCard">
               <div class="countTitle">¿CUÁNTO FALTA?</div>
@@ -238,20 +559,51 @@
             </div>
           </div>
 
-          <!-- Más contenido opcional -->
-          <section class="card">
-            <div class="sectionTitle">Detalles</div>
-            <div style="font-size:14px;color:#1f2937;line-height:1.35;">
-              <strong>Dirección:</strong> Mz. G lote 19 · Urb. Los Lirios<br>
-              <strong>WhatsApp:</strong> <a href="https://wa.me/51923810888" target="_blank" rel="noopener">+51 923 810 888</a>
-            </div>
+         <div class="direccionBox boxElefante tiktokCard" >
+  <h3 class="tituloUbicacion">
+  📍 Recepción
+</h3>
 
-            <div class="btnRow">
-              <a class="btn btnPrimary"
-                 href="https://wa.me/51923810888?text=Hola%20Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo%20%F0%9F%8E%89"
-                 target="_blank" rel="noopener">Confirmar</a>
-              <a class="btn" href="index.html">Portada</a>
-            </div>
+  <p class="direccionTexto">
+    Mz. G lote 19<br>
+    Urb. Los Lirios<br>
+    Lima, SMP
+  </p>
+
+  <div class="mapBox">
+    <iframe 
+      src="https://www.google.com/maps?q=Daniel%20Peña%20San%202764%20Cochabamba&output=embed"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <a href="https://maps.app.goo.gl/yTGpP9FsA7zqymEf9"
+     target="_blank"
+     class="btnMapa">
+    Mapa de ubicación
+  </a>
+</div>
+
+
+              <div class="confirmacionBox boxElefante tiktokCard">
+
+  <div class="iconoCarta">✉️</div>
+
+  <h3 class="tituloConfirmacion">Confirmación</h3>
+
+  <p class="textoConfirmacion">
+    Nos encantaría saber que nos acompañas.<br>
+    Por favor confirma tu asistencia.
+  </p>
+
+  <a href="https://wa.me/51923810888?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo"
+     target="_blank"
+     class="btnConfirmar">
+    Confirmar asistencia
+  </a>
+
+</div>
+
           </section>
 
           <div style="height:30px;"></div>
