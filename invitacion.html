@@ -191,6 +191,32 @@
     inset 0 -3px 0 rgba(0,0,0,.15),
     0 10px 20px rgba(0,0,0,.2);
 }
+ .boxElefante{
+  position: relative;
+  padding: 28px 22px;
+  border-radius: 34px;
+  text-align: center;
+  max-width: 360px;
+  margin: 30px auto;
+  font-family: 'Patrick Hand', cursive;
+  color: #6B4A2B;
+
+  /* 🐘 Fondo celeste + transparencia */
+  background:
+    radial-gradient(circle at top left, rgba(255,255,255,.6) 0%, transparent 45%),
+    radial-gradient(circle at bottom right, rgba(156,202,217,.5) 0%, transparent 45%),
+    linear-gradient(
+      180deg,
+      rgba(234,246,250,.75) 0%,
+      rgba(191,221,230,.75) 100%
+    );
+
+  backdrop-filter: blur(6px);          /* efecto glass */
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 14px 35px rgba(0,0,0,.15);
+}
+
 
 
   .content{
@@ -465,7 +491,7 @@
             </div>
           </div>
 
-         <div class="direccionBox">
+         <div class="direccionBox boxElefante">
   <h3 class="tituloUbicacion">
   📍 Recepción
 </h3>
@@ -491,7 +517,7 @@
 </div>
 
 
-              <div class="confirmacionBox">
+              <div class="confirmacionBox boxElefante">
 
   <div class="iconoCarta">✉️</div>
 
@@ -502,7 +528,7 @@
     Por favor confirma tu asistencia.
   </p>
 
-  <a href="https://wa.me/51999999999?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo"
+  <a href="https://wa.me/51923810888?text=Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Luis%20Arturo"
      target="_blank"
      class="btnConfirmar">
     Confirmar asistencia
