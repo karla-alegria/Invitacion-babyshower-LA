@@ -106,46 +106,111 @@
 }
 
 /* Fecha estilo TikTok */
-.eventDate{
-  margin-top:4px;
+/* ===== FECHA MEJORADA (estilo TikTok) ===== */
+.eventDate2{
+  text-align:center;
+  margin-top:6px;
+  margin-bottom:10px;
+  color:#1f2937;
 }
 
-.eventDate .day{
+.eventDate2 .topLine{
+  display:flex;
+  justify-content:center;
+  gap:10px;
   font-size:12px;
   letter-spacing:1.4px;
-  font-weight:600;
-  color: rgba(31,41,55,.7);
+  font-weight:700;
+  color: rgba(31,41,55,.70);
+  text-transform:uppercase;
 }
 
-.eventDate .dateLine{
+.eventDate2 .midLine{
   display:flex;
   justify-content:center;
   align-items:baseline;
-  gap:6px;
-  margin:2px 0;
+  gap:10px;
+  margin-top:2px;
 }
 
-.eventDate .month{
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:1px;
-}
-
-.eventDate .number{
-  font-size:28px;
+.eventDate2 .bigDay{
+  font-size:44px;
   font-weight:800;
+  line-height:1;
 }
 
-.eventDate .year{
-  font-size:13px;
-  font-weight:600;
-}
-
-.eventDate .time{
-  font-size:12px;
+.eventDate2 .year{
+  font-size:14px;
+  font-weight:700;
   letter-spacing:1px;
-  color: rgba(31,41,55,.7);
+  color: rgba(31,41,55,.70);
 }
+
+.eventDate2 .timeLine{
+  margin-top:2px;
+  font-size:12px;
+  letter-spacing:1.2px;
+  font-weight:700;
+  color: rgba(31,41,55,.70);
+  text-transform:uppercase;
+}
+
+/* ===== CONTADOR “¿CUÁNTO FALTA?” ===== */
+.countdownCard{
+  margin:10px auto 0;
+  max-width:320px;
+  padding:12px 12px 10px;
+  border-radius:14px;
+  background: rgba(255,255,255,.70);
+  border:1px solid rgba(31,41,55,.10);
+  box-shadow: 0 14px 40px rgba(2,20,40,.10);
+  text-align:center;
+}
+
+.countTitle{
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  color: rgba(31,41,55,.72);
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+
+.countGrid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:8px;
+}
+
+.cBox{
+  border-radius:12px;
+  padding:10px 6px;
+  background: rgba(165,210,245,.45);
+  border:1px solid rgba(31,41,55,.10);
+}
+
+.cNum{
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:.5px;
+  line-height:1;
+}
+
+.cLab{
+  margin-top:6px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+  color: rgba(31,41,55,.70);
+  text-transform:uppercase;
+}
+
+.countNote{
+  margin-top:8px;
+  font-size:12px;
+  color: rgba(31,41,55,.65);
+}
+
 
 
   .content{
