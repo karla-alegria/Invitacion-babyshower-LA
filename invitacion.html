@@ -217,6 +217,46 @@
   box-shadow: 0 14px 35px rgba(0,0,0,.15);
 }
 
+.tiktokCard{
+  position: relative;
+  overflow: hidden;
+  border-radius: 34px;
+
+  /* Fondo celeste/azul elegante */
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 45%),
+    radial-gradient(circle at 80% 90%, rgba(120,190,220,.35) 0%, rgba(255,255,255,0) 55%),
+    linear-gradient(180deg, rgba(235,248,252,.85) 0%, rgba(190,225,238,.85) 55%, rgba(165,210,230,.85) 100%);
+
+  /* “Glass” suave */
+  border: 1px solid rgba(255,255,255,.55);
+  box-shadow: 0 18px 40px rgba(2,20,40,.18);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Capa de brillos tipo TikTok */
+.tiktokCard .sparkles{
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: .55;
+  mix-blend-mode: screen;
+
+  /* puntitos + destellos */
+  background:
+    radial-gradient(circle, rgba(255,255,255,.95) 0 1px, rgba(255,255,255,0) 2px) 0 0/70px 70px,
+    radial-gradient(circle, rgba(255,255,255,.75) 0 1px, rgba(255,255,255,0) 2px) 30px 20px/90px 90px,
+    radial-gradient(circle, rgba(255,255,255,.55) 0 1px, rgba(255,255,255,0) 2px) 10px 40px/110px 110px,
+    radial-gradient(circle at 15% 30%, rgba(255,255,255,.35), rgba(255,255,255,0) 45%),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,.28), rgba(255,255,255,0) 50%);
+}
+
+/* Para que el contenido quede encima de los brillos */
+.tiktokCard > *:not(.sparkles){
+  position: relative;
+  z-index: 1;
+}
 
 
   .content{
@@ -442,7 +482,10 @@
         <div class="content">
 
           <!-- Botón música -->
-          <div class="musicWrap">
+         <div class="boxElefante tiktokCard">
+  <div class="sparkles"></div>
+          
+         <div class="musicWrap">
             <button class="musicBtn" id="musicBtn" type="button" aria-label="Reproducir música">
               <svg class="musicIcon" id="musicIcon" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#1f2937" d="M8 5v14l11-7z"></path>
@@ -491,7 +534,7 @@
             </div>
           </div>
 
-         <div class="direccionBox boxElefante">
+         <div class="direccionBox boxElefante tiktokCard" >
   <h3 class="tituloUbicacion">
   📍 Recepción
 </h3>
@@ -517,7 +560,7 @@
 </div>
 
 
-              <div class="confirmacionBox boxElefante">
+              <div class="confirmacionBox boxElefante tiktokCard">
 
   <div class="iconoCarta">✉️</div>
 
