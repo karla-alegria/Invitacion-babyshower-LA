@@ -128,53 +128,54 @@
 }
 
   /* ===== FECHA ESTILO TIKTOK ===== */
-.eventDateTikTok{
-  text-align:center;
+/* ===== FECHA LIMPIA ESTILO TIKTOK ===== */
+.eventDateClean{
+  text-align: center;
   margin: 18px 0 18px;
-  color:#1f2937;
+  color: #1f2937;
 }
 
-.dateRow{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:4px;
+/* ENERO arriba */
+.monthTop{
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
 }
 
-.dayName,
-.monthName{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.6px;
-  padding:4px 10px;
-  border-radius:6px;
+/* Línea SABADO 24 2026 */
+.dateLine{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
 }
 
-.dateMain{
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-  gap:10px;
-  line-height:1;
+.dayName{
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
 }
 
 .dayNumber{
-  font-size:56px;
-  font-weight:900;
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .yearNumber{
-  font-size:16px;
-  font-weight:700;
-  letter-spacing:1px;
-  margin-bottom:8px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 6px;
 }
 
+/* Hora */
 .dateTime{
-  margin-top:6px;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:1.2px;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
 }
 
 
@@ -256,19 +257,18 @@
             <div class="parentsLabel">Mis Papis</div>
             <div class="parentsNames">Karla & Arturo</div>
 
-            <div class="eventDateTikTok">
-  <div class="dateRow">
-    <span class="dayName">SÁBADO</span>
-    <span class="monthName">ENERO</span>
-  </div>
+            <div class="eventDateClean">
+  <div class="monthTop">ENERO</div>
 
-  <div class="dateMain">
+  <div class="dateLine">
+    <span class="dayName">SÁBADO</span>
     <span class="dayNumber">24</span>
     <span class="yearNumber">2026</span>
   </div>
 
   <div class="dateTime">6:00 PM</div>
 </div>
+
 
 
             <div class="countdownCard">
