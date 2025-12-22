@@ -268,13 +268,27 @@ html,body{ height:100%; }
 .popDay{
   animation:
     popIn .7s cubic-bezier(.2,1.6,.35,1) 1,
-    blinkFull 1.4s steps(1,end) infinite;
-  transform-origin:center;
+    fadePulse 2.8s ease-in-out infinite;
+  transform-origin: center;
 }
 
-@keyframes blinkFull{
-  0%, 49%  { opacity:1; }
-  50%,100% { opacity:0; }
+@keyframes fadePulse{
+  0%{
+    opacity:1;
+    transform: scale(1);
+  }
+  40%{
+    opacity:0;
+    transform: scale(1);
+  }
+  60%{
+    opacity:0;
+    transform: scale(1);
+  }
+  100%{
+    opacity:1;
+    transform: scale(1);
+  }
 }
 
  
