@@ -234,8 +234,6 @@ html,body{ height:100%; }
   }
 }
 
-
-
   /* Contador */
   .countdownCard{
     margin:10px auto 0; max-width:320px;
@@ -460,6 +458,16 @@ html,body{ height:100%; }
 </div>
 
 <script>
+//audio página 1
+  document.addEventListener("DOMContentLoaded", () => {
+  const shouldPlay = sessionStorage.getItem("playMusicOnNextPage") === "1";
+  const music = document.getElementById("bgMusic");
+
+  if (shouldPlay && music) {
+    sessionStorage.removeItem("playMusicOnNextPage");
+    music.play().catch(() => {});
+  }
+});
 const btn=document.getElementById("musicBtn");
 const icon=document.getElementById("musicIcon");
 const audio=document.getElementById("bgMusic");
