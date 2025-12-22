@@ -21,6 +21,8 @@ html,body{ height:100%; }
 .wrap{
   display:flex;
   justify-content:center;
+  align-items:center;     /* ✅ centra vertical */
+  min-height:100vh;       /* ✅ ocupa toda la pantalla */
   padding:12px 10px;
 }
 
@@ -345,6 +347,7 @@ html,body{ height:100%; }
     .wrap{ height:100vh; align-items:center; }
     .phone{ height:calc(100vh - 24px); }
     .page{ height:100%; overflow-y:auto; -webkit-overflow-scrolling:touch; }
+    .wrap{ align-items:flex-start; }
   .page::before{
   display:none
 }
